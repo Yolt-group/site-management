@@ -1,0 +1,1 @@
+ALTER TABLE user ADD one_off_ais boolean;

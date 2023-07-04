@@ -1,0 +1,15 @@
+DELETE FROM site_v2 where id = e278a008-bf45-4d19-bb5d-b36ff755be58;
+DELETE FROM site_v2 where id = 5effb41e-911e-434c-b85d-3980e3285e89;
+DELETE FROM site_v2 where id = 65561dd0-f56d-4eb7-9371-b50b95ef2208;
+DELETE FROM site_v2 where id = 26b19b69-fba3-4176-9be7-eaba0c2f7e3a;
+DELETE FROM site_v2 where id = 9f25852f-aa6c-418a-8a2c-ff87648affbb;
+DELETE FROM site_v2 where id = 8ed5d8b8-d06e-46cc-bb14-3a1da967bcf0;
+DELETE FROM site_v2 where id = 19bf09ca-8104-47a8-8860-451b5d80ab32;
+DELETE FROM site_v2 where id = 33f6c521-9e4d-49e7-8414-9e87f7b5ada1;
+DELETE FROM site_v2 where id = 4788b519-cc26-419c-aaae-f8e4e60f8bea;
+DELETE FROM site_v2 where id = 7bd09681-82cc-4369-b3bb-20249e2c3c26;
+DELETE FROM site_v2 where id = 98847a0e-fbe7-4e9d-861f-6b7d4c1e016c;
+DELETE FROM site_v2 where id = 4c0e5db2-99bf-47a3-b155-29e8e11dd6d4;
+DELETE FROM site_v2 where id = ca001c16-02d3-4214-885f-1aad65bb1ad4;
+DELETE FROM site_v2 where id = b68717db-e74b-4098-b054-6fe7b00ccece;
+DELETE FROM site_v2 where id = 33e51254-d12a-4380-aed6-f5f912d8da9f;

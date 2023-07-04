@@ -1,0 +1,10 @@
+UPDATE site_v2 SET no_longer_supported = true WHERE id = 21170e28-fe88-465c-8bff-9f6288416b76;
+UPDATE site_v2 SET no_longer_supported = true WHERE id = 333e1b97-1055-4b86-a112-bc1db801145f;
+UPDATE site_v2 SET no_longer_supported = true WHERE id = de337ce7-dc43-4971-b0c1-b3ca00b2118c;
+UPDATE site_v2 SET no_longer_supported = true WHERE id = 840d4df3-07d2-4d2e-b177-6db8f4cea479;
+UPDATE site_v2 SET no_longer_supported = true WHERE id = acb1c151-5a58-4fa5-bb8b-7830c519678a;
+UPDATE site_v2 SET no_longer_supported = true WHERE id = a10de3d4-93f4-4346-8391-42a8319852b2;
+UPDATE site_v2 SET no_longer_supported = true WHERE id = 035ba2f1-f751-4d71-be88-3e6649ad1051;
+UPDATE site_v2 SET no_longer_supported = true WHERE id = 7bdbe19f-c564-4dd9-bb89-9873a3fb2037;
+UPDATE site_v2 SET no_longer_supported = true WHERE id = fedcc4d1-3e22-4d79-8947-d8e363622533;
+UPDATE site_v2 SET no_longer_supported = true WHERE id = 106a46ec-05b1-4a32-a9fb-ce728c47ce1f;

@@ -1,0 +1,1 @@
+ALTER TABLE user_site add redirect_url_id uuid;

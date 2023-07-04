@@ -1,0 +1,1 @@
+INSERT INTO site (country_code, popular, id, account_type_blacklist, external_id, grouping_by, login_type, name, provider, ranking, account_type_whitelist) VALUES ('IT', true, 5300500b-6b83-4fdc-a8bc-7c2f9be014d4, NULL, 'ingdirect_it', NULL, NULL, 'ING DIRECT', 'SALTEDGE', NULL, ['CURRENT', 'SAVINGS', 'CREDIT']);

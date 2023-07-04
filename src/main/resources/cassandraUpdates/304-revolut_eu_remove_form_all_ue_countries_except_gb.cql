@@ -1,0 +1,11 @@
+DELETE FROM popular_country_site_ranking WHERE site_id = 3673486a-2ff0-4508-8de1-b8b1fbf213f4 AND country_code = 'IT';
+DELETE FROM popular_country_site_ranking WHERE site_id = 3673486a-2ff0-4508-8de1-b8b1fbf213f4 AND country_code = 'NT';
+DELETE FROM popular_country_site_ranking WHERE site_id = 3673486a-2ff0-4508-8de1-b8b1fbf213f4 AND country_code = 'FR';
+DELETE FROM popular_country_site_ranking WHERE site_id = 3673486a-2ff0-4508-8de1-b8b1fbf213f4 AND country_code = 'ES';
+DELETE FROM popular_country_site_ranking WHERE site_id = 3673486a-2ff0-4508-8de1-b8b1fbf213f4 AND country_code = 'BE';
+DELETE FROM popular_country_site_ranking WHERE site_id = 3673486a-2ff0-4508-8de1-b8b1fbf213f4 AND country_code = 'LU';
+DELETE FROM popular_country_site_ranking WHERE site_id = 3673486a-2ff0-4508-8de1-b8b1fbf213f4 AND country_code = 'DE';
+DELETE FROM popular_country_site_ranking WHERE site_id = 3673486a-2ff0-4508-8de1-b8b1fbf213f4 AND country_code = 'AU';
+DELETE FROM popular_country_site_ranking WHERE site_id = 3673486a-2ff0-4508-8de1-b8b1fbf213f4 AND country_code = 'PL';
+DELETE FROM popular_country_site_ranking WHERE site_id = 3673486a-2ff0-4508-8de1-b8b1fbf213f4 AND country_code = 'RO';
+DELETE FROM popular_country_site_ranking WHERE site_id = 3673486a-2ff0-4508-8de1-b8b1fbf213f4 AND country_code = 'CZ';

@@ -1,0 +1,1 @@
+DELETE FROM popular_country_site_ranking WHERE site_id = 3673486a-2ff0-4508-8de1-b8b1fbf213f4 AND country_code = 'NL';

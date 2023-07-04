@@ -1,0 +1,1 @@
+ALTER TABLE client_site ADD using_experimental_version Boolean;

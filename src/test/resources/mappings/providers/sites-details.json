@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/providers/sites-details"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "registeredSites" : [],
+      "aisSiteDetails": []
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

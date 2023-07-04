@@ -1,0 +1,1 @@
+UPDATE site_v2 SET account_type_whitelist = ['PENSION'] WHERE id = 37b9aef8-04d1-4513-ba61-be367e578664;

@@ -1,0 +1,1 @@
+UPDATE site_v2 SET provider = 'YODLEE' WHERE id = b02fca30-65f6-470f-af1b-fbd5704abd56;

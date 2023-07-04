@@ -1,0 +1,1 @@
+UPDATE site_v2 SET account_type_whitelist = ['CURRENT_ACCOUNT', 'SAVINGS_ACCOUNT'] WHERE id = 8f0cc956-8c1d-11e9-bc42-526af7764f64;

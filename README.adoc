@@ -1,0 +1,73 @@
+= site-management
+
+The responsibilities of site-management are:
+
+- the administration of [sites](docs/concepts/site.md);
+- translating high-level functions that a [client](docs/concepts/client.md) executes to lower-level [provider](docs/concepts/provider.md) calls;
+- coordinating the scheduled data retrieval for all [user-sites](docs/concepts/user-site.md) via the 'internal flywheel';
+- handle callbacks being pushed to Yolt by [provider](docs/concepts/provider.md)s via the `providercallback` service.
+
+
+
+== Overview
+
+`site-management` communicates with many other software components:
+
+- several microservices within yolt, using both http and kafka queues;
+- clients over http.
+
+== Interactions over Kafka
+
+To dive into an interaction over Kafka, look for `...Producer` and `...Consumer` classes.
+Find out the topic that is being interacted with and look it up here [https://git.yolt.io/terraform-v2/kafka-topics/]() to see which other services can produce or consume from that topic to get an idea of the flow of information.
+
+=== Interactions over http
+
+To help a reader understand how a particular http endpoint is used, we annotate every endpoint with an annotation that indicates if the endpoint is used for internal or for external consumption.
+`@Internal(...)` means that an endpoint is consumed **only** by other services in the cluster and not by clients.
+`@External` means that an endpoint is available to clients.
+Note that an endpoint annotated with `@External` might also be used by internal services.
+
+
+== Concepts
+
+The most important concepts within site-managent are these, definitely read about these to get an overview:
+
+- [site](docs/concepts/site.md)
+- [user-site](docs/concepts/user-site.md)
+- [provider](docs/concepts/provider.md)
+- [client](docs/concepts/client.md)
+- [user](docs/concepts/user.md)
+
+This and more is documented in the [docs/](docs) folder.
+See the file [docs/reading guide](docs/reading-guide.md) to get started.
+
+
+== Developing
+
+We strive to keep the documentation under [docs/](docs) up-to-date.
+Please update the documentation whenever you add a feature.
+Adding insightful comments in the code is also encouraged.
+
+== Running site-management locally
+
+
+Run the following to spin-up site-management on your local machine while making use of team4 for: kafka, rds, and cassandra.
+
+This can be done in 2 ways:
+
+1)
+[source,shell script]
+----
+$ source team4env.sh <1>
+$ mvn spring-boot:run -Dspring-boot.run.profiles=local,local-team4 \ <2>
+  -Dspring-boot.run.jvmArguments="-Djavax.net.ssl.trustStore=`pwd`/target/team4/cacerts" <3>
+----
+<1> this sets up environment variables, it is important to source the script and not to run it
+<2> enable local and team4 profiles
+<3> tell the jvm to use the truststore that contains all necessary certs (kafka/cassa/rds all go over ssl)
+
+2) Build the project with the maven profile 'local-team-starter'.
+Run it with spring profile local,local-team4
+i.e:
+`mvn -P local-team-starter spring-boot:run -D"spring-boot.run.profiles=local,local-team4"`

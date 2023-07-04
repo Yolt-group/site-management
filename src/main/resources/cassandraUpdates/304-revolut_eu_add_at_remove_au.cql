@@ -1,0 +1,2 @@
+DELETE FROM popular_country_site_ranking WHERE site_id = 555fa50d-62aa-484f-be41-399c510ff375 AND country_code = 'AU';
+INSERT INTO popular_country_site_ranking (site_id, country_code, popular, ranking) VALUES (555fa50d-62aa-484f-be41-399c510ff375, 'AT', true, NULL);

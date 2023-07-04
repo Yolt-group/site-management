@@ -1,0 +1,443 @@
+{
+  "a2034b12-7dcc-11e8-adc0-fa7ae01bbebc": [
+    {
+      "id": "eedd41a8-51f8-4426-9348-314a18dbdec7",
+      "name": "Rabobank",
+      "supportedAccountTypes": [
+        "CURRENT_ACCOUNT"
+      ],
+      "loginType": "URL",
+      "connectionType": "DIRECT_CONNECTION",
+      "services": {
+        "ais": {
+          "onboarded": {
+            "redirectUrlIds": [
+              "29e085b0-7dd0-11e8-adc0-fa7ae01bbebc"
+            ],
+            "client": false
+          },
+          "hasRedirectSteps": true,
+          "hasFormSteps": false,
+          "consentBehavior": []
+        },
+        "pis": {
+          "onboarded": {
+            "redirectUrlIds": [],
+            "client": false
+          },
+          "hasRedirectSteps": true,
+          "hasFormSteps": false,
+          "sepaSingle": {
+            "supported": true,
+            "dynamicFields": {
+              "creditorPostalCountry": {
+                "required": true
+              }
+            }
+          },
+          "sepaPeriodic": null,
+          "ukDomesticPeriodic": null,
+          "sepaScheduled": null,
+          "ukDomesticScheduled": null
+        }
+      },
+      "groupingBy": "Rabobank",
+      "tags": [],
+      "available": false,
+      "enabled": true,
+      "useExperimentalVersion": false,
+      "availableInCountries": [
+        "NL"
+      ],
+      "health": {
+        "manualMaintenanceStatus": "NONE",
+        "manualMaintenanceFrom": null,
+        "manualMaintenanceTo": null,
+        "successRatioForCreateOrUpdate": "not available",
+        "successRatioRefresh": "not available",
+        "healthStatus": "UP"
+      },
+      "noLongerSupported": false,
+      "iconLink": "/content/images/sites/icons/eedd41a8-51f8-4426-9348-314a18dbdec7.png"
+    },
+    {
+      "id": "333e1b97-1055-4b86-a112-bc1db801145f",
+      "name": "Scen. 1: FR Bank Migration Success direct connection",
+      "supportedAccountTypes": [
+        "CURRENT_ACCOUNT",
+        "CREDIT_CARD",
+        "SAVINGS_ACCOUNT",
+        "PREPAID_ACCOUNT",
+        "PENSION",
+        "INVESTMENT"
+      ],
+      "loginType": "URL",
+      "connectionType": "DIRECT_CONNECTION",
+      "services": {
+        "ais": {
+          "onboarded": {
+            "redirectUrlIds": [
+              "29e085b0-7dd0-11e8-adc0-fa7ae01bbebc"
+            ],
+            "client": true
+          },
+          "hasRedirectSteps": true,
+          "hasFormSteps": false,
+          "consentBehavior": []
+        }
+      },
+      "groupingBy": "Scen. 1: FR Bank Migration Success",
+      "tags": [],
+      "available": true,
+      "enabled": true,
+      "useExperimentalVersion": false,
+      "availableInCountries": [
+        "FR"
+      ],
+      "health": {
+        "manualMaintenanceStatus": "NONE",
+        "manualMaintenanceFrom": null,
+        "manualMaintenanceTo": null,
+        "successRatioForCreateOrUpdate": "not available",
+        "successRatioRefresh": "not available",
+        "healthStatus": "UP"
+      },
+      "noLongerSupported": false,
+      "iconLink": "/content/images/sites/icons/333e1b97-1055-4b86-a112-bc1db801145f.png"
+    },
+    {
+      "id": "840d4df3-07d2-4d2e-b177-6db8f4cea479",
+      "name": "Scen. 2: FR Bank Migration Success Remainder still on scraping - direct connection",
+      "supportedAccountTypes": [
+        "CURRENT_ACCOUNT"
+      ],
+      "loginType": "URL",
+      "connectionType": "DIRECT_CONNECTION",
+      "services": {
+        "ais": {
+          "onboarded": {
+            "redirectUrlIds": [
+              "29e085b0-7dd0-11e8-adc0-fa7ae01bbebc"
+            ],
+            "client": true
+          },
+          "hasRedirectSteps": true,
+          "hasFormSteps": false,
+          "consentBehavior": []
+        }
+      },
+      "groupingBy": "Scen. 2: FR Bank Migration Success Remainder still on scraping",
+      "tags": [],
+      "available": true,
+      "enabled": true,
+      "useExperimentalVersion": false,
+      "availableInCountries": [
+        "FR"
+      ],
+      "health": {
+        "manualMaintenanceStatus": "NONE",
+        "manualMaintenanceFrom": null,
+        "manualMaintenanceTo": null,
+        "successRatioForCreateOrUpdate": "not available",
+        "successRatioRefresh": "not available",
+        "healthStatus": "UP"
+      },
+      "noLongerSupported": false,
+      "iconLink": "/content/images/sites/icons/840d4df3-07d2-4d2e-b177-6db8f4cea479.png"
+    },
+    {
+      "id": "035ba2f1-f751-4d71-be88-3e6649ad1051",
+      "name": "Scen. 3: FR Bank Migration Partial migration (noLongerSupported) direct connection",
+      "supportedAccountTypes": [
+        "CURRENT_ACCOUNT"
+      ],
+      "loginType": "URL",
+      "connectionType": "DIRECT_CONNECTION",
+      "services": {
+        "ais": {
+          "onboarded": {
+            "redirectUrlIds": [
+              "29e085b0-7dd0-11e8-adc0-fa7ae01bbebc"
+            ],
+            "client": true
+          },
+          "hasRedirectSteps": true,
+          "hasFormSteps": false,
+          "consentBehavior": []
+        }
+      },
+      "groupingBy": "Scen. 3: FR Bank Migration Partial migration (noLongerSupported)",
+      "tags": [],
+      "available": true,
+      "enabled": true,
+      "useExperimentalVersion": false,
+      "availableInCountries": [
+        "FR"
+      ],
+      "health": {
+        "manualMaintenanceStatus": "NONE",
+        "manualMaintenanceFrom": null,
+        "manualMaintenanceTo": null,
+        "successRatioForCreateOrUpdate": "not available",
+        "successRatioRefresh": "not available",
+        "healthStatus": "UP"
+      },
+      "noLongerSupported": false,
+      "iconLink": "/content/images/sites/icons/035ba2f1-f751-4d71-be88-3e6649ad1051.png"
+    },
+    {
+      "id": "decc7e83-da09-4bca-b9cf-bdfd8aefdd7b",
+      "name": "Scenario region selection",
+      "supportedAccountTypes": [
+        "CURRENT_ACCOUNT"
+      ],
+      "loginType": "URL",
+      "connectionType": "DIRECT_CONNECTION",
+      "services": {
+        "ais": {
+          "onboarded": {
+            "redirectUrlIds": [
+              "29e085b0-7dd0-11e8-adc0-fa7ae01bbebc"
+            ],
+            "client": true
+          },
+          "hasRedirectSteps": true,
+          "hasFormSteps": true,
+          "consentBehavior": []
+        }
+      },
+      "groupingBy": "Scenario region selection",
+      "tags": [],
+      "available": true,
+      "enabled": true,
+      "useExperimentalVersion": false,
+      "availableInCountries": [
+        "NL",
+        "FR"
+      ],
+      "health": {
+        "manualMaintenanceStatus": "NONE",
+        "manualMaintenanceFrom": null,
+        "manualMaintenanceTo": null,
+        "successRatioForCreateOrUpdate": "not available",
+        "successRatioRefresh": "not available",
+        "healthStatus": "UP"
+      },
+      "noLongerSupported": false,
+      "iconLink": "/content/images/sites/icons/decc7e83-da09-4bca-b9cf-bdfd8aefdd7b.png"
+    },
+    {
+      "id": "ca8a362a-a351-4358-9f1c-a8b4b91ed65b",
+      "name": "Yolt test Open banking",
+      "supportedAccountTypes": [
+        "CURRENT_ACCOUNT"
+      ],
+      "loginType": "URL",
+      "connectionType": "DIRECT_CONNECTION",
+      "services": {
+        "ais": {
+          "onboarded": {
+            "redirectUrlIds": [
+              "29e085b0-7dd0-11e8-adc0-fa7ae01bbebc",
+              "286d9ae8-0e5d-44b4-b153-4f3b9ff58701",
+              "5f162483-2a59-4dab-897d-81c3b6f093a1",
+              "ca4958c7-5e34-4a54-841e-409d942fc194",
+              "cd9289d3-3bf4-4acd-95e3-ce3c8e299deb",
+              "d68075b6-4c08-4131-b57d-70b00425c29b",
+              "f72fc082-ee74-4d79-80d0-4ee22725991f"
+            ],
+            "client": false
+          },
+          "hasRedirectSteps": true,
+          "hasFormSteps": false,
+          "consentBehavior": []
+        },
+        "pis": {
+          "onboarded": {
+            "redirectUrlIds": [
+              "29e085b0-7dd0-11e8-adc0-fa7ae01bbebc",
+              "ca4958c7-5e34-4a54-841e-409d942fc194"
+            ],
+            "client": false
+          },
+          "hasRedirectSteps": true,
+          "hasFormSteps": false,
+          "ukDomesticSingle": {
+            "supported": true,
+            "dynamicFields": {
+              "remittanceInformationStructured": {
+                "required": false
+              }
+            }
+          },
+          "sepaPeriodic": null,
+          "ukDomesticPeriodic": null,
+          "sepaScheduled": null,
+          "ukDomesticScheduled": null
+        }
+      },
+      "groupingBy": "Yolt test Open banking",
+      "tags": [],
+      "available": true,
+      "enabled": true,
+      "useExperimentalVersion": false,
+      "availableInCountries": [
+        "GB",
+        "NL",
+        "IT",
+        "FR",
+        "CZ",
+        "PL"
+      ],
+      "health": {
+        "manualMaintenanceStatus": "NONE",
+        "manualMaintenanceFrom": null,
+        "manualMaintenanceTo": null,
+        "successRatioForCreateOrUpdate": "not available",
+        "successRatioRefresh": "not available",
+        "healthStatus": "UP"
+      },
+      "noLongerSupported": false,
+      "iconLink": "/content/images/sites/icons/ca8a362a-a351-4358-9f1c-a8b4b91ed65b.png"
+    },
+    {
+      "id": "33aca8b9-281a-4259-8492-1b37706af6db",
+      "name": "Yolt test bank",
+      "supportedAccountTypes": [
+        "CURRENT_ACCOUNT",
+        "CREDIT_CARD",
+        "SAVINGS_ACCOUNT",
+        "PREPAID_ACCOUNT",
+        "PENSION",
+        "INVESTMENT"
+      ],
+      "loginType": "URL",
+      "connectionType": "DIRECT_CONNECTION",
+      "services": {
+        "ais": {
+          "onboarded": {
+            "redirectUrlIds": [
+              "29e085b0-7dd0-11e8-adc0-fa7ae01bbebc"
+            ],
+            "client": true
+          },
+          "hasRedirectSteps": true,
+          "hasFormSteps": false,
+          "consentBehavior": []
+        },
+        "pis": {
+          "onboarded": {
+            "redirectUrlIds": [
+              "29e085b0-7dd0-11e8-adc0-fa7ae01bbebc"
+            ],
+            "client": false
+          },
+          "hasRedirectSteps": true,
+          "hasFormSteps": false,
+          "sepaSingle": {
+            "supported": true
+          },
+          "ukDomesticSingle": {
+            "supported": true
+          },
+          "sepaPeriodic": {
+            "supported": true,
+            "supportedFrequencies": [
+              "DAILY",
+              "WEEKLY",
+              "MONTHLY",
+              "YEARLY"
+            ]
+          },
+          "ukDomesticPeriodic": {
+            "supported": true,
+            "supportedFrequencies": [
+              "DAILY",
+              "WEEKLY",
+              "MONTHLY",
+              "YEARLY"
+            ]
+          },
+          "sepaScheduled": {
+            "supported": true
+          },
+          "ukDomesticScheduled": {
+            "supported": true
+          }
+        }
+      },
+      "groupingBy": "Yolt test bank",
+      "tags": [],
+      "available": true,
+      "enabled": true,
+      "useExperimentalVersion": false,
+      "availableInCountries": [
+        "GB",
+        "FR",
+        "IT",
+        "ES",
+        "BE",
+        "DE",
+        "NL",
+        "PL",
+        "CZ"
+      ],
+      "health": {
+        "manualMaintenanceStatus": "NONE",
+        "manualMaintenanceFrom": null,
+        "manualMaintenanceTo": null,
+        "successRatioForCreateOrUpdate": "not available",
+        "successRatioRefresh": "not available",
+        "healthStatus": "UP"
+      },
+      "noLongerSupported": false,
+      "iconLink": "/content/images/sites/icons/33aca8b9-281a-4259-8492-1b37706af6db.png"
+    },
+    {
+      "id": "0285a320-7dca-11e8-adc0-fa7ae01bbebc",
+      "name": "Yoltbank-Budget insight flow",
+      "supportedAccountTypes": [
+        "CURRENT_ACCOUNT",
+        "CREDIT_CARD",
+        "SAVINGS_ACCOUNT",
+        "PREPAID_ACCOUNT",
+        "PENSION",
+        "INVESTMENT"
+      ],
+      "loginType": "FORM",
+      "connectionType": "SCRAPER",
+      "services": {
+        "ais": {
+          "onboarded": {
+            "redirectUrlIds": [
+              "29e085b0-7dd0-11e8-adc0-fa7ae01bbebc",
+              "4c58a5cc-7de0-11e8-adc0-fa7ae01bbebc"
+            ],
+            "client": true
+          },
+          "hasRedirectSteps": false,
+          "hasFormSteps": true,
+          "consentBehavior": []
+        }
+      },
+      "groupingBy": "Yoltbank-Budget insight flow",
+      "tags": [],
+      "available": true,
+      "enabled": true,
+      "useExperimentalVersion": false,
+      "availableInCountries": [
+        "FR"
+      ],
+      "health": {
+        "manualMaintenanceStatus": "NONE",
+        "manualMaintenanceFrom": null,
+        "manualMaintenanceTo": null,
+        "successRatioForCreateOrUpdate": "not available",
+        "successRatioRefresh": "not available",
+        "healthStatus": "UP"
+      },
+      "noLongerSupported": false,
+      "iconLink": "/content/images/sites/icons/0285a320-7dca-11e8-adc0-fa7ae01bbebc.png"
+    }
+  ]
+}

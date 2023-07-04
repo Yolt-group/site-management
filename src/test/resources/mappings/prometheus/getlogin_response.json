@@ -1,0 +1,65 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/api/v1/query",
+    "queryParameters": {
+      "query": {
+        "matches": ".*getloginstep.*"
+      },
+      "time": {
+        "matches": "[0-9]*"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "site_id": "d28b4598-efcf-41c8-8522-08b2744e551a"
+            },
+            "value": [
+              1555054443,
+              "0.5"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "82c16668-4d59-4be8-be91-1d52792f48e3"
+            },
+            "value": [
+              1555054443,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "ca8a362a-a351-4358-9f1c-a8b4b91ed65b"
+            },
+            "value": [
+              1555054443,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "ed1fd770-db06-4e93-9199-abccceae3820"
+            },
+            "value": [
+              1555054443,
+              "NaN"
+            ]
+          }
+        ]
+      }
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
+

@@ -1,0 +1,1 @@
+ALTER TABLE user_session WITH  default_time_to_live = 0;

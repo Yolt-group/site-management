@@ -1,0 +1,110 @@
+{
+  "explanationField": {
+    "id": "EXPLANATION",
+    "displayName": "Shortname",
+    "explanation": "<!DOCTYPE html><html><p>Some information about adding your bank to Yolt.</p> <div class=\"bright\">Lookup username and code in your &quot;online banking&quot; account.</div> </html>"
+  },
+  "hiddenComponents": ["java.util.HashMap", {
+    "HIDDEN1": "defaultValue",
+    "HIDDEN2": "false"
+  }],
+  "formComponents": [
+    "java.util.ArrayList",
+    [
+      [
+        "nl.ing.lovebird.sitemanagement.service.domain.TextField",
+        {
+          "id": "LOGIN",
+          "displayName": "Surname",
+          "length": 20,
+          "maxLength": 40,
+          "optional": false
+        }
+      ],
+      [
+        "nl.ing.lovebird.sitemanagement.service.domain.ChoiceFormComponent",
+        {
+          "formComponents": [
+            "java.util.ArrayList",
+            [
+              [
+                "nl.ing.lovebird.sitemanagement.service.domain.TextField",
+                {
+                  "id": "OP_LOGIN1",
+                  "displayName": "Membership number",
+                  "length": 20,
+                  "maxLength": 12,
+                  "optional": true
+                }
+              ],
+              [
+                "nl.ing.lovebird.sitemanagement.service.domain.TextField",
+                {
+                  "id": "OP_LOGIN2",
+                  "displayName": "Card number",
+                  "length": 20,
+                  "maxLength": 16,
+                  "optional": true
+                }
+              ],
+              [
+                "nl.ing.lovebird.sitemanagement.service.domain.MultiFormComponent",
+                {
+                  "formComponents": [
+                    "java.util.ArrayList",
+                    [
+                      [
+                        "nl.ing.lovebird.sitemanagement.service.domain.TextField",
+                        {
+                          "id": "OP_LOGIN3",
+                          "displayName": null,
+                          "length": 20,
+                          "maxLength": 6,
+                          "optional": true
+                        }
+                      ],
+                      [
+                        "nl.ing.lovebird.sitemanagement.service.domain.TextField",
+                        {
+                          "id": "OP_LOGIN4",
+                          "displayName": null,
+                          "length": 20,
+                          "maxLength": 8,
+                          "optional": true
+                        }
+                      ]
+                    ]
+                  ],
+                  "displayName": "Sort code and Account number",
+                  "optional": true
+                }
+              ]
+            ]
+          ],
+          "displayName": null,
+          "optional": false
+        }
+      ],
+      [
+        "nl.ing.lovebird.sitemanagement.service.domain.PasswordField",
+        {
+          "id": "OP_PASSWORD",
+          "displayName": "Passcode",
+          "length": 20,
+          "maxLength": 5,
+          "optional": true
+        }
+      ],
+      [
+        "nl.ing.lovebird.sitemanagement.service.domain.PasswordField",
+        {
+          "id": "OP_PASSWORD1",
+          "displayName": "Memorable word",
+          "length": 20,
+          "maxLength": 40,
+          "optional": true
+        }
+      ]
+    ]
+  ]
+}

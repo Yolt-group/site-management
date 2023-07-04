@@ -1,0 +1,1 @@
+DELETE FROM popular_country_site_ranking WHERE site_id = 75457be7-96d3-4fc1-98a2-98ded940b563 AND country_code = 'FR';

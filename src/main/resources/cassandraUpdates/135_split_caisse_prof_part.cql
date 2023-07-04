@@ -1,0 +1,1 @@
+INSERT INTO site_v2 (id, name, external_id, provider, login_type, account_type_whitelist, grouping_by) VALUES (05445fde-d953-47f3-a008-7a234557c9f7, 'Caisse d''Épargne Particuliers', '1153', 'BUDGET_INSIGHT', 'FORM', ['CURRENT_ACCOUNT','SAVINGS_ACCOUNT','CREDIT_CARD'], NULL);

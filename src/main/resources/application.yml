@@ -1,0 +1,175 @@
+server:
+  servlet:
+    context-path: /site-management
+  port: 8080
+info:
+  appName: site-management
+  appVersion: 0.1
+spring:
+  # https://stackoverflow.com/questions/59509831/prometheus-not-exporting-kafka-consumer-data-upon-upgrade-from-spring-boot-2-1-6
+  jmx.enabled: true
+  main:
+    banner-mode: "off"
+  data:
+    cassandra:
+      contact-points: 172.17.32.66
+      serial-consistency-level: local_serial
+  datasource:
+    driverClassName: org.postgresql.Driver
+  dao:
+    exceptiontranslation:
+      enabled: false # disable exception translation for Cassandra exception compatibility
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          time_zone = UTC
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    mixed: true
+  kafka:
+    consumer:
+      group-id: site-management
+yolt:
+  datasource:
+    hikari:
+      batch:
+        enabled: true
+        initialization-fail-timeout: 500
+        validation-timeout: 5000
+        connection-timeout: 600000
+        idle-timeout: 120000
+        minimum-idle: 0
+        maximum-pool-size: 3
+        pool-name: "pool-batch"
+        data-source-properties:
+          # https://github.com/brettwooldridge/HikariCP/wiki/Rapid-Recovery
+          # HikariCP recommends that the driver-level socket timeout
+          # be set to (at least) 2-3x the longest running SQL transaction,
+          # or 30 seconds, whichever is longer. However, your own recovery
+          # time targets should determine the appropriate timeout for your
+          # application.
+          socketTimeout: 720
+          # https://jdbc.postgresql.org/documentation/head/connect.html
+          options: "-c statement_timeout=360s"
+          logServerErrorDetail: false
+  commons:
+    error-handling:
+      prefix: SM
+  client-token:
+    requester:
+      vault-based-secret:
+        enabled: true
+    verification:
+      enabled: true
+  site-management:
+    debug:
+      form-validation-detailed-errors: true
+      white-listed-clients-for-deprecated-user-site-flow:
+        - a2034b12-7dcc-11e8-adc0-fa7ae01bbebc # Test client (Cucumber e.g.)
+        - 43d71a36-cf05-47c6-a2ca-c426eb5537e3 # Performance tests
+        - 5aeafb70-6e5e-4cf5-a13e-3023846fc928 # Manual test client (YfbTesterApp)
+        - a5154eb9-9f47-43b4-81b1-fce67813c002
+        - 297ecda4-fd60-4999-8575-b25ad23b249c # Yolt App
+      white-listed-clients-for-deprecated-site-list:
+        - a2034b12-7dcc-11e8-adc0-fa7ae01bbebc # Test client (Cucumber e.g.)
+        - 43d71a36-cf05-47c6-a2ca-c426eb5537e3 # Performance tests
+        - 5aeafb70-6e5e-4cf5-a13e-3023846fc928 # Manual test client (YfbTesterApp)
+        - a5154eb9-9f47-43b4-81b1-fce67813c002
+        - 297ecda4-fd60-4999-8575-b25ad23b249c # Yolt App
+  yts-group:
+    bad-request-url: https://www.yolt.com/error-pages/bad-request
+    not-found-url: https://www.yolt.com/error-pages/not-found
+  vault:
+    enabled: true
+    cassandra:
+      enabled: true
+    postgresql:
+      enabled: true
+    secret:
+      enabled: true
+  kafka:
+    topics:
+      client-sites-updates:
+        topic-name: ycs_clientSitesUpdates
+        listener-concurrency: 1
+    producing:
+      enabled: true
+isp:
+  proxy:
+    auto-configure: true
+lovebird:
+  cacheEncryptionDetails: true
+  kafka:
+    health:
+      topic: heartbeats
+      timeoutInMilliseconds: 5000
+  flywheel:
+    internal:
+      enabled: false
+      defaultRefreshesPerDay: 1
+      refreshesPerDay:
+        44b561bf-bf83-4ddb-ac54-59e52b75081f: 1 # mentioned just as an example of how to configure it per client
+        297ecda4-fd60-4999-8575-b25ad23b249c: 2 # Yolt App
+      throttling:
+        blacklistedProviders: YODLEE,BUDGET_INSIGHT,SALTEDGE
+        # The number of days after we stop refreshing users.
+        # Put value 0 or below to disable throttling by minimum seconds since last refresh.
+        minimumSecondsSinceLastRefresh: 1200
+
+  countries:
+    liveCountryCodes: GB,IT
+  accountsAndTransactions:
+    endpointBaseUrl: https://accounts-and-transactions/accounts-and-transactions
+  providers:
+    endpointBaseUrl: https://providers/providers
+    httpTimeoutFormProvidersInSeconds: 122 # A bit more than 60 sec as we allow providers to take up to 60 seconds for a blocking call. (mainly yodlee usersite delete)
+    threadpool:
+      default:
+        size: 200
+    form:
+      maxOrphanedUsersInResponse: 100
+service:
+  tokens:
+    url: https://tokens/tokens
+  site-management:
+    url: https://site-management/site-management
+  clients:
+    url: https://clients/clients
+route:
+  content:
+    site-logos: /content/images/sites/logos/{siteId}.png
+    site-icons: /content/images/sites/icons/{siteId}.png
+repository:
+  fetchSize: 200
+management:
+  endpoint:
+    health:
+      group:
+        readiness:
+          include: "readinessState,db,cassandra,kafka"
+  endpoints:
+    web:
+      exposure:
+        include: info, health, metrics, prometheus
+      base-path: /actuator
+  server:
+    port: 9443
+    ssl:
+      enabled: true
+      key-store: /vault/secrets/keystore.p12
+      key-alias: keystore
+      key-store-password: dontchangeit
+useExternalConsentStub: false
+callbacks:
+  user-id-json-path-expressions:
+    BUDGET_INSIGHT: "$.user.id"
+    SALTEDGE: "$.data.customer_id"
+
+kyc:
+  sitesLimitPerUser: 10
+springdoc:
+  override-with-generic-response: false
+  paths-to-exclude: /springfox-v3/**, /swagger-resources/**, /v2/api-docs/**
+  pathsToMatch: /sites/**, /v1/users/**, /users/**, /pollTransactions/**, /clients/**, /v2/**

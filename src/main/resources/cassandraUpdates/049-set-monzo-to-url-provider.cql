@@ -1,0 +1,1 @@
+UPDATE site SET login_type = 'URL' WHERE country_code ='NL' AND popular = false AND id = 82c16668-4d59-4be8-be91-1d52792f48e3;

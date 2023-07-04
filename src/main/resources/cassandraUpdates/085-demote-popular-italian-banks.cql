@@ -1,0 +1,6 @@
+DELETE FROM site where country_code= 'IT' AND popular = true AND id = 4c0d5639-20ca-493b-847f-a8030eee0450;
+DELETE FROM site where country_code= 'IT' AND popular = true AND id = d6aa5265-ba05-405b-923a-e0bd8a20c6dc;
+DELETE FROM site where country_code= 'IT' AND popular = true AND id = 21c536fb-c509-4b44-a686-d9a041aeea33;
+INSERT INTO site (country_code, popular, id, account_type_blacklist, external_id, grouping_by, login_type, name, provider, ranking, account_type_whitelist) VALUES ('IT', false, 4c0d5639-20ca-493b-847f-a8030eee0450, NULL, 'bpm_personal_it', NULL, NULL, 'Banco Popolare', 'SALTEDGE', NULL, ['CURRENT', 'SAVINGS', 'CREDIT']);
+INSERT INTO site (country_code, popular, id, account_type_blacklist, external_id, grouping_by, login_type, name, provider, ranking, account_type_whitelist) VALUES ('IT', false, d6aa5265-ba05-405b-923a-e0bd8a20c6dc, NULL, 'chebanca_it', NULL, NULL, 'CheBanca!', 'SALTEDGE', NULL, ['CURRENT', 'SAVINGS', 'CREDIT']);
+INSERT INTO site (country_code, popular, id, account_type_blacklist, external_id, grouping_by, login_type, name, provider, ranking, account_type_whitelist) VALUES ('IT', false, 21c536fb-c509-4b44-a686-d9a041aeea33, NULL, 'mps_it', NULL, NULL, 'Monte dei Paschi di Siena', 'SALTEDGE', NULL, ['CURRENT', 'SAVINGS', 'CREDIT']);

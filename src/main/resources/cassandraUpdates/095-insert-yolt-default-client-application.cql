@@ -1,0 +1,4 @@
+INSERT INTO client_application (client_id, client_application_id, base_redirect_url, updated) VALUES (297ecda4-fd60-4999-8575-b25ad23b249c, cee03d67-664c-45d1-b84d-eb042d88ce65, 'https://www.yolt.com/callback', '2018-06-21 12:00:00');
+INSERT INTO providers__client_application (client_id, client_application_id, base_redirect_url, updated) VALUES (297ecda4-fd60-4999-8575-b25ad23b249c, cee03d67-664c-45d1-b84d-eb042d88ce65, 'https://www.yolt.com/callback', '2018-06-21 12:00:00');
+INSERT INTO client_application (client_id, client_application_id, base_redirect_url, updated) VALUES (a5154eb9-9f47-43b4-81b1-fce67813c002, 82a19af9-dd8f-4d26-92e4-38e71f4aef67, 'https://ingfrance.notimplemented.fr', '2018-06-21 12:00:00');
+INSERT INTO providers__client_application (client_id, client_application_id, base_redirect_url, updated) VALUES (a5154eb9-9f47-43b4-81b1-fce67813c002, 82a19af9-dd8f-4d26-92e4-38e71f4aef67, 'https://ingfrance.notimplemented.fr', '2018-06-21 12:00:00');

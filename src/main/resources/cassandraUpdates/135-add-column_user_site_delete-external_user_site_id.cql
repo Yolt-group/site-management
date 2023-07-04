@@ -1,0 +1,1 @@
+ALTER TABLE user_site_delete add external_user_site_id text;

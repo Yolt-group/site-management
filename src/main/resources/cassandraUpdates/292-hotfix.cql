@@ -1,0 +1,1 @@
+delete from popular_country_site_ranking where site_id = 3673486A-2FF0-4508-8DE1-B8B1FBF213F4 and country_code = 'IE';

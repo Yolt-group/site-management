@@ -1,0 +1,114 @@
+@startuml
+title migration initiation of user_site_1
+
+actor initiator
+participant YAP
+participant site_management
+
+initiator -> YAP : migrate user-site_1 request
+YAP -> site_management : migrate user-site_1 request
+site_management ->  YAP : migrate user-site_1 response
+YAP -> initiator : migrate user-site_1 response
+
+site_management -> site_management: set user-site_1\nstatus to MIGRATION_NEEDED
+@enduml
+-------------------------------------------------------------------------------------------------------------------------------------
+@startuml
+title app starts migration of user-site_1 to user_site_2
+
+actor app
+participant site_management
+participant health
+participant accounts
+
+app -> site_management: get migration-group
+app <- site_management: migration-group
+app -> site_management: get login info:\n/sites/me/{siteId}/migration/{migratingUserSiteId}
+note right: new endpoint
+site_management -> site_management: store migrating-user-site-id\nfor callback
+app <- site_management: login info
+app -> app: provider OAuth
+app -> site_management: callback
+site_management -> site_management: set migrating-user-site\nmigrationStatus to MIGRATING_FROM
+site_management -> site_management: set new-user-site\nmigrationStatus to MIGRATING_TO
+app <- site_management: response new user-site-id
+loop
+    app -> health: polling
+    app <- health: response: MIGRATING_TO
+end loop
+
+app -> app: match all the accounts
+
+app -> site_management: migrate accounts: \n{\n matched accounts: {... ,...}\n new accounts: [...]\n closed accounts:[...]\n}
+
+site_management -> accounts: handle migrate accounts request
+
+site_management -> site_management: migrate user_site_1 to a new site_id
+site_management -> site_management: set user-site_1\nmigrationStatus to NONE
+site_management -> site_management: set user-site_2\nmigrationStatus to NONE
+
+site_management -> site_management: refresh all user_sites
+note right : this will overwrite unmatched\ntransactions in migrated accounts\n(30 days or since last data fetch)
+
+@enduml-------------------------------------------------------------------------------------------------------------------------------------
+@startuml
+title site_management migrate user-site
+start
+:user-site_1
+Yodlee
+all accounts;
+note: locked by migrationStatus MIGRATING_FROM
+:accounts: get accounts for user_site_1;
+note: matched accounts\nare already migrated
+   if (accounts.isEmpty) then (yes)
+    :delete user-site_1;
+    note: all accounts were migrated\nand transactions are\ncoupled to account-ids
+    :user-site_1
+    deleted]
+   else (no)
+    :migrate user-site_1;
+    :lookup site-id_2\nwith smaller whitelist;
+    :update site-id_1;
+    :user-site_1
+    Yodlee
+    site-id_2
+    Savings & credit cards]
+   endif
+   end
+@enduml
+-------------------------------------------------------------------------------------------------------------------------------------
+@startuml
+title account migration
+start
+:{\n from: account-id_1,\n to:account-id_2***\n};]
+:get account_1 by account-id;
+note right: this account is linked\nto user_site_1
+:get account_2 by account-id;
+note right: this account is linked\nto user_site_2
+:update account_1.userSiteId to account_2.userSiteId;
+:update account_1.externalId to account_2.externalId;
+:update account_1.siteId to account_2.siteId;
+:update account_1.type to account_2.type;
+:mark account_2 for deletion;
+:remove account_2;
+note right: only user-sites are scheduled, so we\nneed to remove the account immediately
+note: this will also remove\nthe linked transactions
+:return OK;
+note right: account_1 transactions are \nautomatically updated in next refresh
+end
+: ***linked by (manual) matching;
+@enduml
+
+-----notes---------------------------------------------------------------------------------------------------------------------------
+wat met hidden (current) accounts?
+wat met closed (current) accounts?
+wat als er alleen hidden/closed accounts overblijven na migratie bij yodlee?
+wat als een bestaande account niet gematcht kan worden?
+wat doe je als je niet een maand aan data op kan halen?
+wat als je de appt killt halverwege?
+transactions nodig in MVP of nice to have?
+
+-----possible implementations--------------------------------------------------------------------------------------------------------
+mapping tabel accounts migratie: internal id, external id
+
+

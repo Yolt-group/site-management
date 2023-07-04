@@ -1,0 +1,1 @@
+UPDATE site SET name = 'Co-operative Bank' WHERE country_code = 'GB' AND popular = false AND id = 62b0daae-dadc-4646-a9ec-8622e702c835;

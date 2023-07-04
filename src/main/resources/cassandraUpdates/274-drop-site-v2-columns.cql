@@ -1,0 +1,1 @@
+alter table site_v2 drop (account_type_whitelist, available_in_countries, consent_expiry_in_days, external_id, grouping_by, is_test_site, login_type, name, provider, sepa_single, services, uses_step_types);

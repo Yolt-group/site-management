@@ -1,0 +1,1 @@
+UPDATE site_v2 SET no_longer_supported = true WHERE id = 5b30b442-4cb3-4ef5-a810-f1f3932a8d74;

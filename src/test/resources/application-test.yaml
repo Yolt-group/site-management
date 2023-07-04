@@ -1,0 +1,129 @@
+environment: local
+spring:
+  mvc:
+    locale: en_GB
+    locale-resolver: fixed
+  data:
+    cassandra:
+      contact-points: 127.0.0.1
+      keyspace-name: site_management
+      username: cassandra
+      password: cassandra
+  datasource:
+    username: runner
+    password: runner
+    url: jdbc:postgresql://127.0.0.1:5432/integration-test-db
+    hikari:
+      data-source-properties:
+        logServerErrorDetail: true
+  main:
+    allow-bean-definition-overriding: true
+  kafka:
+    listener:
+      missing-topics-fatal: false
+    consumer:
+      auto-offset-reset: earliest
+  jpa:
+    show-sql: false
+
+wiremock:
+  server:
+    port: 0
+  # Disable Wiremock rest template SSL customization because it actually breaks Wiremock
+  rest-template-ssl-enabled: false
+yolt:
+  datasource:
+    hikari:
+      batch:
+        enabled: false
+  kafka:
+    consumer-group: site-management-${random.uuid}
+    topics:
+      all-users-batch:
+        topic-name: allUsersBatch
+        listener-concurrency: 1
+      users:
+        topic-name: users
+        listener-concurrency: 1
+      user-site-events:
+        topic-name: userSites
+        listener-concurrency: 2
+      clientRedirectUrls:
+        topic-name: clientRedirectUrls
+        listener-concurrency: 1
+      clientAuthenticationMeans:
+        topic-name: clientAuthenticationMeans
+        listener-concurrency: 1
+      datasciencepipeline:
+        topic-name: ycs_preprocessingRequests
+        listener-concurrency: 1
+      healthOrchestration:
+        topic-name: ycs_healthOrchestration
+        listener-concurrency: 1
+      providerAccounts:
+        topic-name: providerAccounts
+        listener-concurrency: 8
+      formProviderExternalUserIds:
+        topic-name: formProviderExternalUserIds
+        listener-concurrency: 2
+      activityEvents:
+        topic-name: activityEvents
+        listener-concurrency: 8
+      requests-errors:
+        topic-name: ingestionRequestsErrors
+        listener-concurrency: 8
+      webhooks:
+        topic-name: ycs_webhooks
+        listener-concurrency: 8
+
+  orphan-user:
+    allowedExecutions:
+      - provider: YODLEE
+        batchId: 191cd44d-7926-4ea1-b7fa-9ba25cda7084
+      - provider: BUDGET_INSIGHT
+        batchId: 62e2ebbe-0d4b-4f6a-8a42-84668e61955f
+  vault:
+    enabled: false
+    postgresql:
+      enabled: false
+    secret:
+      enabled: false
+  site-management:
+    pis:
+      uk-domestic:
+        enabled: true
+    debug:
+      form-validation-detailed-errors: true
+      white-listed-clients-for-deprecated-user-site-flow:
+        - 297ecda4-fd60-4999-8575-b25ad23b249c # yolt client in nl.ing.lovebird.sitemanagement.TestUtil.CLIENT_TOKEN
+      white-listed-clients-for-deprecated-site-list:
+        - 297ecda4-fd60-4999-8575-b25ad23b249c # yolt client in nl.ing.lovebird.sitemanagement.TestUtil.CLIENT_TOKEN
+        - a5154eb9-9f47-43b4-81b1-fce67813c002
+  yts-group:
+    redirect-url: https://client-redirect.sandbox.yolt.io
+    bad-request-url: https://www.yolt.com/error-pages/bad-request
+    not-found-url: https://www.yolt.com/error-pages/not-found
+  consent-starter:
+    redirect-url: https://consent-starter.sandbox.yolt.io/consent-completed
+
+service:
+  tokens:
+    # private key coupled to the 'Yolt client' public key below. {"use":"sig","kty":"RSA","kid":"ce008ab6-f4d3-4649-853c-654830c98042","alg":"RS512","n":"sch9ANSm1StGWLqjXC9WAXSHTQ38lMpbpE6dvXFDUdNvULDZDImqCNF7xQ9pK9K_WndxcBjxD5G4YbiWy6m3ktOFH8fvrqELkJJAkA9z4YswCpSrE2gsxg46e4OD4MfNWogkMsRQffcKkpzpvpoiEyM1bEz6IqPfDj2Uch7XGOQjkpAAbfrc3KDtcNkeV16dNC0Hse2kkOYoWFvNZvHI1Rea_qlynJKkdjy1JckX8GOI4ZCkwoEdssaO57E6YTx76az6zJLkia7x29Z0uyNN2rz3FmJB2HjDAeELjEDKSMPRKrTLXKVvU0SrSTD6OlmTVHMhEwbWmhoLn3Fcz9AGhQ","e":"AQAB","d":"sCfQvIb4u9XCQV7FSS1aEd0Nx2rpb-DGRxrir3hP1P8kmBZzKjopsc0nz02CzzpmAlTBoOoFyYCA6ssFF84VqDVP_fqU4jqOg_R2Zof5MW1B7-n5TSR24NPuXL4maQ5wypiFDYx5mSa0Yit6bDK7Oq0zXRk07Cfld23K7fzi8rRMSL1CUHwwFvRXBHH_4mS65k3m5rBZIJ4MBxjDy5K_QMSjKA2Fh0KuZhaDZrJrqBEmkequAaRX61tEK-k150MGehtTIjgHUDx3NUhGm2l5zmohwyaWdSXliO8Nlfg5eLq2kQkjuol0-1P5umMNN1CqjSRG4wICR-Oc-B10HgKg4Q","p":"1dsvr7hikY0BwH3MpRti6URG-vPuKv_UByzTjF7ICeIRfMQriWfhpki032J0ksy1skhFgqU5oQy83IrV7aJvaJUJ4El1TV2fznq-W4ZBakHjlJ-qgWzm7CMbe-mj7-uBeFc3MndMCyvO0QDXBYg4dn9pYJrd3RO2HJvumecQ6V0","q":"1NF0y5NWoxvpwXvPdSMAozCt0vo_MtqmHcp7YQOoqhe1D6SsrxDe-BiHySiguBRiPhRa0-n7G164pC19FXsEi2FnLAqWaVePJHHWy4Rp5Z2uwYrnotqnZ6WybVhbS4cXCjLD0W_4jxATLVdVOwlZT3Ww014YFrnRXzlWSJsct0k","dp":"aBxB1dj824D7Blv34bU4bPlZWNih7PsInMmc32xRFEajXssdqtIQz2P78fg7ajAQkI-Qj26iZJ4P34oTZZG7jP1phnAclCJtJxcoTuRIOlODWJp2ZnW-4dyhh6yRq75KFGzZKU9cjN-x2pv_EelkG4Qhp-8c7YCoGrtq6C_OUt0","dq":"lPuYrtcTZJYq21dIUTFSxetTFIo5aellNx_DpZPBJGn6R9w5Q0klPjs1-52kfZlPeTQYrZd0QaHa0pxBn6MB-G0Uo-E5kL9KJvJGsyycUbFEYJtUM06suMNnmGKtbr9AYtRM_zZKpCRVuH0V3oFZ82Vph16ssGQe7XGfNK7ZuHk","qi":"uQWycI3z8_VkTlCstu3b-X3Y6g8gtAe3exm8rhXM8LCXliJ7GxC7KR9oGhuWiCvQT9FaC6nYhZtsgSIqrigiLmKFEToOnowxKGwRbBoyyCR9g0infI7J88qKeQxggiKskcngfG418pvdlAXbims8jMg6BKjJLFfKE7ihLwG1OCQ"}
+    # use this to generate a test client-token in the tokens service (in a custom testcase in ClientTokenServiceTest)
+    signature-jwks: "{\"keys\":[{\"use\":\"sig\",\"kty\":\"RSA\",\"kid\":\"4BA22E35-72ED-48FB-BEA1-B903325DAD23\",\"alg\":\"RS512\",\"n\":\"sC9Y_-u_K--e3mq1fpNSm4-3wQLKev-50zQZMrfHlg8hMpD9JQ1-nBX0WCjbEqJlD63Fi0uo22GOVwXyOPqPc09H_XQeeHZciM6OO-24CWpgT8AyNWWjUB-gKNdKDGvT_Orruer16Yo2UXTgQQbzShpIWX1qNds1q_DtUwVneXRjUgA1SFr4VnhYi-RKrTHZOQcp9h5zOzV9J1xUPjl5YNdkOdTotOB13cFgVKs8KW9zNiAEQW0woP_ry-PlB9mgAwzhnhYDPqGdR4xqAMkC1qRWFLKQdm1XOBEGw97ONLUpo3S2hudouR876vPy6rq2xvX3nT4d5x4GFBl4Ckwa-Q\",\"e\":\"AQAB\",\"p\":\"6sFm3eQXvI0paQIGgy2l3K-XFNuaNMnzsoPgN56oaBO-p-85QrT7sK1xN57xEI25RCxvsatNRs3ayjFHCPOAmJzsBfYOZuBhmgqxL77RFDc19P4nKTdufBX_RkIrCkVqXh8puA_E9hIjdGwCkkjyzPeIU6qjwaYEsbBn3AdD5Ic\",\"q\":\"wCEJud4g1oPCenuhfd7SdT0WW8Y-sf1E149ZspEA8i4GwqGY9PvzNN103NWc9qHHKgZrOEMV_Gh3WgcQctWpGhIdXN0w7HcuGvi8WC71wTQWPkdlehKETvFXGjJx6XAmmoQ5sjxa9yushVuNDZefPwspzdnugudq0rTRAlIfZH8\",\"dp\":\"AatSYe2HRa3zR23eQfyHG2ScPGe7VvjApNpPM9YK-IJ7bpJC4_iJeZ4iGfUlXarEUHnIaYkASaqZDasACE5C8dLb0scHHzAlQYUl8WL39Z7W4WEVQjPEs1kssYEy8SXBNd4e29Iw4lcKrX8_HW8rWs2_yGiENZJKokDQ3D2o--0\",\"dq\":\"Jk9wLQvJ6Hxlbx7v2LVxqccAilRBdCRYcdM3w49-bMwYtP6cDV2f5U6zWsWNgvBHUm3tO07FN4ttIRp_gSZxja1HBZllhAFPxDkM9ViH0HqeZNS_u1Ot5j_hamvcovul9vGev5ehW9_tirnyql8tddi4AUAPezLB7jn340qUz-k\",\"qi\":\"PZ-KFBw-y8VPGrrfCgD2ykVbejNwP_iWEncTnTqgCNwtt6nX7OEIZvXf9se_MO7xLHpOvBSgOw_R3pcynuiwpQMU-JxHmj7WRjPZg5hMDzpazzM0JpSpFU7hC2vTpd3zx9kJD-FYKCnRlekO5-xhz_TQupBisyED2K7FUSYfQFo\"},{\"use\":\"sig\",\"kty\":\"RSA\",\"kid\":\"ce008ab6-f4d3-4649-853c-654830c98042\",\"alg\":\"RS512\",\"n\":\"sch9ANSm1StGWLqjXC9WAXSHTQ38lMpbpE6dvXFDUdNvULDZDImqCNF7xQ9pK9K_WndxcBjxD5G4YbiWy6m3ktOFH8fvrqELkJJAkA9z4YswCpSrE2gsxg46e4OD4MfNWogkMsRQffcKkpzpvpoiEyM1bEz6IqPfDj2Uch7XGOQjkpAAbfrc3KDtcNkeV16dNC0Hse2kkOYoWFvNZvHI1Rea_qlynJKkdjy1JckX8GOI4ZCkwoEdssaO57E6YTx76az6zJLkia7x29Z0uyNN2rz3FmJB2HjDAeELjEDKSMPRKrTLXKVvU0SrSTD6OlmTVHMhEwbWmhoLn3Fcz9AGhQ\",\"e\":\"AQAB\"}]}"
+  site-management:
+    url: http://localhost:${wiremock.server.port}/site-management
+  clients:
+    url: http://localhost:${wiremock.server.port}/clients
+lovebird:
+  providers:
+    endpointBaseUrl: http://localhost:${wiremock.server.port}/providers
+  accountsAndTransactions:
+    endpointBaseUrl: http://localhost:${wiremock.server.port}/accounts-and-transactions
+kyc:
+  sitesLimitPerUser: 2
+management:
+  server:
+    port: 8888
+    ssl:
+      enabled: false

@@ -1,0 +1,103 @@
+= Modeling a consent
+
+Under PSD2 a person or legal entity can give their consent to an AISP footnote:[Account Information Service Provider] to share their bank details (account and transaction data) with a TPP footnote:[Third Party Provider].
+In the nomenclature of PSD2 this is called TPPC footnote:[Third Party Provider Consent].
+
+In site-management the TPPC is currently modelled as link:../concepts/access-means.md[UserSiteAccessMeans].
+Further, there is a one-to-one correspondence between a UserSite and the UserSiteAccessMeans.
+
+== TPPC in more detail
+
+We have learned the hard way that banks implement the TPPC in different ways.
+In theory these are the three options a bank has to model the TPPC on their end:
+
+[source]
+----
+user 1 -- 0..n consent 1 -- 1 account <1>
+user 1 -- 0..1 consent 1 -- n account <2>
+user 1 -- 0..n consent 1 -- n account <3>
+----
+<1> The user has any number of consents, each consent linked to exactly 1 account
+<2> The user has at most one consent, linked to one or more accounts
+<3> The user has any number of consents, each linked to one or more accounts
+
+We see each of these possibilities in practice, we will now give them (hopefully) memorable names.
+
+=== max-one-account (situation 1)
+
+For a given bank-user there can be more than 1 consent active at a given time, each consent is linked to exactly one account.
+An example bank that uses this model is ABN Amro.
+
+=== single-consent (situation 2)
+
+For a given bank-user there is at most 1 consent active at any given time, and this consent must contain all the accounts that the user wishes to share with the TPP.
+If the bank-user completes the consent flow at the bank, any active consents that exist prior to that moment for the bank-user and TPP are invalidated by the bank.
+An example bank that uses this model is Rabobank.
+
+=== normal (situation 3)
+
+For a given bank-user there can be more than 1 consent active at a given time, each consent can be linked to one or more accounts.
+There can be overlap between the sets of accounts for two concurrently active consents **fixme this is conjecture :)**
+An example bank that uses this model is **fixme example?**.
+
+
+== Problems
+
+In practice several problems arise, we will describe these now.
+
+== Problem: account mixing
+
+This problem manifests most clearly in the <<max-one-account (situation 1),max-one-account>> situation, because users with more than one account have multiple usersites linked to the same bank.
+
+Given a user with 2 accounts _(A and B)_ at a bank wanting to share them both with yolt, it is required that the user create a separate usersite for each account.
+This leads to confusion whenever a user has to renew their consent (every 90 days typically).
+
+Prior to being sent to the banks consent flow, the user must choose which usersite to renew consent for _(lets say the usersite associated with account A)_.
+However, once at the bank the user has the freedom to select any of their accounts, we cannot restrict the set of accounts that the user can choose from.
+If the user does not select the account that is currently linked to the usersite _(but instead selects account B)_, then:
+
+- the usersite that is being renewed will have 2 accounts associated with it where we have consent to retrieve data for only 1 of the accounts
+- the consent that is present on the other usersite _(also for account B)_ is voided **fixme validate that this is indeed true**
+
+== Problem: inadvertent invalidation of a consent
+
+This problem manifests in the <<single-consent (situation 2), single-consent>> situation.
+
+Given a user with 2 accounts at a bank wanting to share them both with yolt, if the user creates 2 separate usersites and links one account to each of them, only one usersite will be "active" (will have a valid consent).
+Reason: banks with a 'single-consent' will immediately invalidate all prior active consents whenever a user completes the consent flow.
+
+We cannot enforce the creation of at most 1 usersite on our end for these types of banks, since banks scope the active consent to the combination of TPP and bank-user.
+It can be the case that a single yolt-user has multiple bank-users (example: private account, business account) and wants to share accounts from each user with us using the same yolt user, thus requiring more than one user-site.
+
+
+== Problem mitigations for: account mixing
+
+The problem of account mixing arises because we have no influence over which accounts a user selects when entering the consent flow at the bank.
+If we could restrict, preselect, or otherwise control the list of accounts that the user will be presented when entering the consent flow, we could solve this problem.
+
+Another mitigation strategy would be to reject and not store the consent on our end unless the bank account matches the bank account we already have on file.
+Unfortunately, the way our system is currently set up does not permit site-management to interject itself effectively in the flow of data to make this possible.
+
+
+== Mitigations for: inadvertent invalidation of a consent
+
+The problem of inadvertent invalidation of a consent cannot be mitigated effectively.
+
+
+== Usersite as a superfluous concept
+
+If we were to drop the concept of a usersite altogether and instead make the concept of an "account" known to site-management, this would solve both of the discussed problems.
+
+A world without usersites is much simpler, consider what happens after a user has been lead out to a bank and has completed the consent flow, we would do the following after a successful token exchange:
+
+- retrieve the list L of accounts that the acquired token has access to
+- for every account in L that we do not yet know about, create a record of it
+- store the token in the corresponding record for each account in L
+
+Not having to manage the usersite makes things a lot easier.
+
+[glossary]
+== Glossary
+
+bank-user:: the account with which a natural person makes him or herself known to the bank (possibly on behalf of a legal entity)
+yolt-user:: a link:../concepts/user.md[user] in the yolt system

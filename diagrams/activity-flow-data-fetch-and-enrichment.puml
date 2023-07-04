@@ -1,0 +1,32 @@
+@startuml
+title Activity flow: data-fetch and data-enrichment
+
+state CreateUserSiteEvent
+state RefreshUserSitesEvent
+state RefreshUserSitesFlywheelEvent
+state UpdateUserSiteEvent
+
+state AggregationFinishedEvent
+state TransactionsEnrichmentFinishedEvent
+
+state "Fetching (not a real state, only conceptual)" as Fetching {
+    state RefreshedUserSiteEvent
+    state IngestionFinishedEvent
+    state FinishedFetching <<choice>>
+
+    [*] --> IngestionFinishedEvent
+    [*] --> RefreshedUserSiteEvent
+
+    IngestionFinishedEvent --> FinishedFetching
+    RefreshedUserSiteEvent --> FinishedFetching
+}
+
+CreateUserSiteEvent --> Fetching
+RefreshUserSitesEvent --> Fetching
+RefreshUserSitesFlywheelEvent --> Fetching
+UpdateUserSiteEvent --> Fetching
+
+FinishedFetching --> AggregationFinishedEvent : when one of the two events occurred \nfor all user sites in the activity
+
+AggregationFinishedEvent --> TransactionsEnrichmentFinishedEvent : when client has enrichment contract
+@enduml

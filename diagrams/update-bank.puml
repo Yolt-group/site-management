@@ -1,0 +1,33 @@
+@startuml
+title Update usersite update consent (connectionType == "DIRECT_CONNECTION")
+
+actor user
+participant site_management
+participant providers
+participant bank
+
+user -> site_management : GET /user-sites/<id>/renew-access \n(baseRedirectUrlId, psuIpAddress)
+site_management -> site_management : check for active externalConsent
+site_management -> providers : /providers/<provider-site123>/get-login-info \n (baseRedirectUrl, stateId, authMeansRef, \n externalConsentId,psuIpAddress)
+providers -> bank : (optional, in case of OB 'externalConsentId')
+bank -> providers :  (optional, in case of OB 'externalConsentId')
+providers -> site_management : UrlStep(authorizationUrl, externalConsentId, providerState)
+
+site_management -> user : authorizationUrl
+
+user -> bank : authorises at bank, optionally through an improved flow by 'reconsenting' \nthe previous externalConsentId rather than fully starting a new consent.
+bank -> user : redirects back to user
+user -> site_management : POST /user-sites (redirectUrl)
+
+site_management -> providers : /providers/<provider-site123>/create-access-means (authMeansRef, redrectUrl, providerState)
+
+providers -> bank : get acccess means
+bank -> providers: accessmeans
+providers -> site_management: accessmeans
+site_management -> site_management : store accessmeans
+
+site_management -> providers : fetch data (accessMeans)
+providers -> bank : get data
+user -> site_management : polls until the usersite is in exitstate.
+
+@enduml

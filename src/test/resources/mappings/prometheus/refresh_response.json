@@ -1,0 +1,1359 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/api/v1/query",
+    "queryParameters" : {
+      "query" : {
+        "matches" : ".*REFRESH.*"
+      },
+      "time" : {
+        "matches" : "[0-9]*"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "site_id": "a7b73eed-0273-4d17-a3c8-3d74402439ae",
+              "site_name": "Crédit du Nord"
+            },
+            "value": [
+              1554188668,
+              "0.25"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "3e7b0cb0-142c-4b0a-9a20-87f3997fb113",
+              "site_name": "John Lewis Credit Card"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "a677366d-66f7-4f92-82cf-f79a62745644",
+              "site_name": "Marks and spencer"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "36a3f829-529b-40d4-bfec-ec71bd402726",
+              "site_name": "Hello bank!"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "ce55750b-cab1-4c12-abd2-5b79a2015127",
+              "site_name": "Widiba Banca"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "f5d8b10e-ce8d-47c0-b891-98f29ccc50ae",
+              "site_name": "PayPal"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "35270590-680b-4448-a65f-dc976f7986ad",
+              "site_name": "Sella Bank"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "9416de84-502b-4522-a622-635a02ed8924",
+              "site_name": "First Trust"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "f994b131-1fd9-457b-b0fd-4e9ccd0dd03b",
+              "site_name": "Bred"
+            },
+            "value": [
+              1554188668,
+              "0.14285714285714285"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "d966b57b-a15d-4b44-a5b7-5774196eefc4",
+              "site_name": "Banque Rhône-Alpes"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "06a9bfa5-1f43-4b03-bbc9-d787f6ed0e88",
+              "site_name": "First Direct"
+            },
+            "value": [
+              1554188668,
+              "0.06666666666666667"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "41de5024-d22e-4d24-b295-fd90a4fed926",
+              "site_name": "Barclays"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "7be10292-dc95-4c19-b8a2-31a30b53a32a",
+              "site_name": "Santander"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "a2db3bd6-4399-43c2-a742-c90ac0b8a4dd",
+              "site_name": "Lloyds"
+            },
+            "value": [
+              1554188668,
+              "0.039999999999999994"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "d01ebde8-9ab5-4f21-a7e9-9c8f4520501d",
+              "site_name": "Aqua Credit Card"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "dddd9034-a6b9-4138-86da-4870400ebf2a",
+              "site_name": "Bank of Scotland"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "df664898-b53d-4a84-b569-553f27a7fad0",
+              "site_name": "Fineco Bank"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "f5639ec9-df4d-473c-a665-2edd8ddefae8",
+              "site_name": "Yolt Bank (form)"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "0e0fb282-11e4-4c57-9b4f-9a8ce0a528d2",
+              "site_name": "Crédit Agricole"
+            },
+            "value": [
+              1554188668,
+              "0.03361344537815126"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "3f875825-b453-4bd7-a049-73f9f4c8768c",
+              "site_name": "Banque Kolb"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "f19af2a2-6d60-4a02-b671-ad09379157f5",
+              "site_name": "Banque Populaire"
+            },
+            "value": [
+              1554188668,
+              "0.20689655172413793"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "162b5f67-b83c-4dd7-84b3-31040075fe5b",
+              "site_name": "Vanquis Bank (UK)"
+            },
+            "value": [
+              1554188668,
+              "0.5"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "62b0daae-dadc-4646-a9ec-8622e702c835",
+              "site_name": "Co-operative Bank"
+            },
+            "value": [
+              1554188668,
+              "0.09090909090909091"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "a56dd2cd-2f7b-43aa-be84-03232b7cf5d8",
+              "site_name": "American Express Cards"
+            },
+            "value": [
+              1554188668,
+              "0.016666666666666666"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "2594d0d3-4e6e-428e-9686-92082c5d4b22",
+              "site_name": "BGL BNP Paribas"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "5eac330b-a345-45d5-a84b-c5381321b7eb",
+              "site_name": "Ulster Bank"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "046e7e02-472b-4c9d-92ff-e37a1580fe97",
+              "site_name": "AXA Banque"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "2516082a-6ada-4389-8314-8c2251f58ff3",
+              "site_name": "Groupama"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "65f0a868-39b7-4e3b-8e58-034d53376209",
+              "site_name": "Mutavie"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "9400e122-9a8d-447f-9648-c5c136014a7d",
+              "site_name": "Banque Transatlantique"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "c59e6bb9-4899-4419-a3cc-bf0e5cc24868",
+              "site_name": "Binck"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "f6753377-5614-4e12-8a9f-e567cc46b227",
+              "site_name": "CartaSi"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "b7855573-7178-48fa-a85c-7aac3f9d3ef2",
+              "site_name": "Hello Bank"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "75987dd2-0dfe-43ca-95d3-6ef4bc2aecda",
+              "site_name": "Crédit Mutuel"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "6e8809ac-e8b1-4c02-81d3-745a6e522260",
+              "site_name": "NatWest"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "a26d366f-308e-4a9a-95d2-c2fa5647fdc4",
+              "site_name": "Nationwide Building Society"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "646e5547-5caa-49a3-a7f5-8cfa42d27b22",
+              "site_name": "Anytime"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "97da458c-2205-41be-80c6-a3c9b9a97b0f",
+              "site_name": "Crédit Mutuel Sud-Ouest"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "f5f755a7-2cc0-4a7b-b50e-acf33e87559e",
+              "site_name": "Compte Nickel"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "4c0d5639-20ca-493b-847f-a8030eee0450",
+              "site_name": "Banco Popolare"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "68eef1a1-0b13-4d4b-9cc2-09a8b2604ca0",
+              "site_name": "Lloyds"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "51699d57-68e5-4db3-9a64-9ae33f518de3",
+              "site_name": "PensionBee"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "026e3008-9c5e-4296-9092-a2cf5b7f1a4b",
+              "site_name": "ING Direct"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "33dc80cd-1661-4dd8-8de7-00817106d3af",
+              "site_name": "Banca Mediolanum"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "642d020c-ee9b-496b-933f-05196f198716",
+              "site_name": "BforBank"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "00ec3346-4022-48c0-8b65-37530cde06fc",
+              "site_name": "American Express"
+            },
+            "value": [
+              1554188668,
+              "0.09411764705882354"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "71b4ad6b-d620-4049-9f09-f9fd9110bd15",
+              "site_name": "NatWest"
+            },
+            "value": [
+              1554188668,
+              "0.0057306590257879654"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "24d0daef-7998-4c83-b287-033aaf2c6f07",
+              "site_name": "Crédit Maritime"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "3b1f6d33-2930-49b5-a752-4bdda3b10cd7",
+              "site_name": "Banque Laydernier"
+            },
+            "value": [
+              1554188668,
+              "1"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "05445fde-d953-47f3-a008-7a234557c9f7",
+              "site_name": "Caisse d'Épargne Particuliers"
+            },
+            "value": [
+              1554188668,
+              "0.029850746268656712"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "81c0374e-838a-42dc-8739-6f04b268a17c",
+              "site_name": "Amazon Credit Card (UK)"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "b359fefb-1ee1-4fa4-8ca5-4e16cc9e05af",
+              "site_name": "MBNA Credit Card"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "c10511fa-70ea-4203-9237-6c39bae91d7a",
+              "site_name": "N26"
+            },
+            "value": [
+              1554188668,
+              "0.052631578947368425"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "fd4ee7f7-dca1-45ff-a687-40119fee8c65",
+              "site_name": "Bank of Scotland"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "1d3a5922-605f-40f9-aa95-dca88a8fb1b9",
+              "site_name": "Intelligent Finance"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "0df96b78-da6c-48d2-92fc-5ebc7a5a6d06",
+              "site_name": "Deutsche Bank"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "e6cb6314-dc4f-4738-86d6-20c2fd87356a",
+              "site_name": "Banque Palatine"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "640e6973-cb4e-4a2e-b946-6c88207f0a81",
+              "site_name": "Post Office Credit Card (UK)"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "8b89bead-4024-47fb-8689-ee0e1598c49f",
+              "site_name": "Banque Fiducial"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "37b9aef8-04d1-4513-ba61-be367e578664",
+              "site_name": "Wealthify"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "0e11711f-5353-4076-bce5-cc50e8703b77",
+              "site_name": "HSBC Bank"
+            },
+            "value": [
+              1554188668,
+              "0.06666666666666667"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "82c16668-4d59-4be8-be91-1d52792f48e3",
+              "site_name": "Monzo"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "92cbbf77-3ff4-4a82-a4dc-14c07ed228d1",
+              "site_name": "Santander"
+            },
+            "value": [
+              1554188668,
+              "0.052631578947368425"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "0194afaf-0fa7-4a20-91df-542362504b8f",
+              "site_name": "Cetelem"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "80c051a0-2cf8-45ec-bfe3-c884b617cac0",
+              "site_name": "Halifax"
+            },
+            "value": [
+              1554188668,
+              "0.05128205128205129"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "ee4f87b5-68a6-4464-b769-d41737109458",
+              "site_name": "Starling Bank"
+            },
+            "value": [
+              1554188668,
+              "0.006666666666666666"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "cc22a939-5329-4625-b36a-f43742052c0a",
+              "site_name": "BNP Paribas Réunion"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "b499a447-1b34-4e77-8d9a-3e27ecd85d1e",
+              "site_name": "Crédit Mutuel Massif Central"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "c12e2461-30f7-4e55-a126-6791f2f72d55",
+              "site_name": "BNP Paribas"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "b0141bd7-4907-4da3-93f1-4252f2d5d40d",
+              "site_name": "First Direct (UK)"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "cb5d02ed-6d15-4e27-9b3f-2c88bb98093b",
+              "site_name": "Banque Tarneaud"
+            },
+            "value": [
+              1554188668,
+              "1"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "0db894e8-12a5-4e87-8c6b-3de0ed26f0f1",
+              "site_name": "BNP Paribas Antilles"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "31f41afc-2702-4d05-985d-dbd6210491f9",
+              "site_name": "Banque Nuger"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "238e01e1-0feb-4b33-b616-d84e454c1926",
+              "site_name": "Smile"
+            },
+            "value": [
+              1554188668,
+              "0.6666666666666666"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "3e8d3311-3d2e-43f9-a5eb-108bd942bfe7",
+              "site_name": "Cr Firenze"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "64cf6f65-f2ed-4b85-9170-26dc9a35323f",
+              "site_name": "Barclays"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "7503c80a-b258-417c-98fa-0cf78aaad443",
+              "site_name": "Société Marseillaise de Crédit"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "c2304406-37ad-4180-bb3b-a80e100f78fe",
+              "site_name": "Société Générale"
+            },
+            "value": [
+              1554188668,
+              "0.02"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "36130c5f-9024-4a89-91fc-be31fac2f9ec",
+              "site_name": "Lloyds"
+            },
+            "value": [
+              1554188668,
+              "0.0036496350364963502"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "654435c8-0c86-46e7-89b6-f2bd7a9d7ebc",
+              "site_name": "Halifax"
+            },
+            "value": [
+              1554188668,
+              "0.01775147928994083"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "72d0a47b-828c-4c28-a36a-db6ee68a6b18",
+              "site_name": "TSB"
+            },
+            "value": [
+              1554188668,
+              "0.052631578947368425"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "76e4df94-2410-4b28-8f0c-7b29bdd87750",
+              "site_name": "Capital One Credit Card"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "98884144-4509-4055-9222-dd2895014ae2",
+              "site_name": "Nationwide Building Society"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "15a25da8-fed0-4759-9d14-b2a5829d2010",
+              "site_name": "Caixa Geral de Depositos"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "e3520c3d-24fa-45c6-ba7c-5a3f5307d3a2",
+              "site_name": "BPER Banca"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "d1a118d8-13a5-4262-bbc1-519c6ded0149",
+              "site_name": "La Banque Postale"
+            },
+            "value": [
+              1554188668,
+              "0.011363636363636362"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "6415705a-f50e-4bf7-abd4-da3374c6f279",
+              "site_name": "NatWest"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "7c3a8b2f-26d4-4cd3-8417-7c58c0cd5092",
+              "site_name": "Crédit Coopératif"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "60da7c41-316a-46f6-938d-e216f3fcab69",
+              "site_name": "Sainsbury's Bank"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "22ed212d-12e3-475a-883a-b533beba3cfd",
+              "site_name": "Royal Bank of Scotland"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "5300500b-6b83-4fdc-a8bc-7c2f9be014d4",
+              "site_name": "ING DIRECT (IT)"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "f4cd6e8d-2224-4b17-a629-c2dafc0537f1",
+              "site_name": "Ulster Bank"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "ffdf7eb7-b011-4b3e-9531-89ac7120fbb2",
+              "site_name": "Yorkshire Bank"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "1ed6cc15-60fe-4b00-adf8-bd8e04e7804e",
+              "site_name": "Santander"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "cf5fe167-216c-4c0e-964f-f7fd9b495661",
+              "site_name": "CIC"
+            },
+            "value": [
+              1554188668,
+              "0.0588235294117647"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "81e5b69c-bbaf-4a97-b23c-e6daae6fae67",
+              "site_name": "LCL"
+            },
+            "value": [
+              1554188668,
+              "0.017857142857142856"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "24e574ae-010f-4e50-bb28-f4fc1ab178d3",
+              "site_name": "Clydesdale Bank"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "07bc0c8f-68ea-4df3-b0df-8be122387d7c",
+              "site_name": "Crédit Mutuel Bretagne"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "5fc96ba5-d00b-41b4-97c3-50e89e960c0a",
+              "site_name": "Banca Popolare di Sondrio"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "217a893a-5040-4291-a6be-85790c8b65c6",
+              "site_name": "Nationwide Building Society"
+            },
+            "value": [
+              1554188668,
+              "0.5161290322580645"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "8e96ad29-fd1c-40cb-b28f-826b022f2763",
+              "site_name": "Marks and spencer"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "d6aa5265-ba05-405b-923a-e0bd8a20c6dc",
+              "site_name": "CheBanca!"
+            },
+            "value": [
+              1554188668,
+              "0.07692307692307693"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "3651edaa-d36e-48cb-8cc3-94bb1fbe8f76",
+              "site_name": "Danske Bank"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "3834ff8f-8f03-451c-9bba-6362244a4dc5",
+              "site_name": "UniCredit"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "564338d7-7a98-4f0e-811c-08514d33faa0",
+              "site_name": "Barclays"
+            },
+            "value": [
+              1554188668,
+              "0.052631578947368425"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "5fe1e9f8-eb5f-4812-a6a6-2002759db545",
+              "site_name": "Royal Bank of Scotland"
+            },
+            "value": [
+              1554188668,
+              "0.075"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "6c1fc44a-e797-4548-80e8-029802c2842f",
+              "site_name": "HSBC Bank"
+            },
+            "value": [
+              1554188668,
+              "0.10526315789473685"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "8b21aab6-e0a3-43ae-be5e-def71509bef0",
+              "site_name": "HSBC Bank"
+            },
+            "value": [
+              1554188668,
+              "0.006269592476489029"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "d8f3fe00-28eb-4297-a3ab-c8f427e58a24",
+              "site_name": "NS\u0026I (savings)"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "e57a3731-ec1a-4c82-98c3-22058379dc47",
+              "site_name": "Intesa Sanpaolo"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "b9d7d591-0587-4ebc-97b6-9c2a564ee285",
+              "site_name": "HSBC France"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "d1d96613-6edc-47fa-b2d1-13218ed30181",
+              "site_name": "Monabanq"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "55e69dcf-abcd-4768-9b5e-447a730615eb",
+              "site_name": "Citibank"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "f85fbc25-89c0-4715-a314-4f7cf755c87c",
+              "site_name": "Banque BCP"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "52bb002a-ea65-4c87-9b32-88a50f284b6a",
+              "site_name": "N26"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "65e08e1d-0562-4ffa-b504-86845a67f15f",
+              "site_name": "Barclaycard"
+            },
+            "value": [
+              1554188668,
+              "0.013333333333333332"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "c626a27f-1301-47b6-b586-337857023658",
+              "site_name": "Boursorama"
+            },
+            "value": [
+              1554188668,
+              "0.023809523809523808"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "f66acc2b-5d33-4413-8ae0-5656a7b60f66",
+              "site_name": "Bank of Ireland"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "0b6816d1-d509-4bfe-b52f-d68f45ccb8dd",
+              "site_name": "C-zam"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "8dd9ccc4-dbb5-4b89-859c-980c10d54e41",
+              "site_name": "Virgin Credit Card"
+            },
+            "value": [
+              1554188668,
+              "0.1"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "91849349-34e8-49a0-8cfa-86eb60dda397",
+              "site_name": "Tesco Bank"
+            },
+            "value": [
+              1554188668,
+              "0.16666666666666666"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "6f3832f8-4ed7-4e20-a568-f82e5549cbd4",
+              "site_name": "Halifax"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "adf254f8-afb0-499e-8055-70172bbb24c3",
+              "site_name": "Qonto"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "c9e654a1-5977-44df-97db-60cebea90290",
+              "site_name": "Metro Bank"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "d28b4598-efcf-41c8-8522-08b2744e551a",
+              "site_name": "Barclays"
+            },
+            "value": [
+              1554188668,
+              "1"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "4cf28639-891e-493f-8450-a3506cf974fb",
+              "site_name": "PSA Banque"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "90a84c6c-aaeb-4515-9692-e112a2fb8b28",
+              "site_name": "UBI Banca"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "ac75d67d-5ede-4972-94a8-3b8481fa2145",
+              "site_name": "Bank of Ireland"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "24401bfc-dc3d-442b-9c38-14e4929c47bf",
+              "site_name": "Fortuneo"
+            },
+            "value": [
+              1554188668,
+              "0.07142857142857142"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "e52cb5c4-267f-492c-9c17-31160d3a64aa",
+              "site_name": "RCI Bank"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "dda2651f-9518-409b-9b5e-6e0d1ccd0112",
+              "site_name": "First Direct"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "04b5103b-587b-4bc1-90ad-0aac572a7472",
+              "site_name": "Banque Courtois"
+            },
+            "value": [
+              1554188668,
+              "NaN"
+            ]
+          },
+          {
+            "metric": {
+              "site_id": "38049351-86bf-4295-a925-384807af5bbb",
+              "site_name": "Carrefour Banque"
+            },
+            "value": [
+              1554188668,
+              "0"
+            ]
+          }
+        ]
+      }
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
+

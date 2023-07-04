@@ -1,0 +1,22 @@
+environment: team4
+spring:
+  datasource:
+    url: jdbc:postgresql://rds.team4.yolt.io:5432/site-management
+
+yolt.team.starter:
+  kubernetes-context: team4
+  environment: ycs.team4
+  namespace: ycs
+  application-name: ${spring.application.name}
+
+service:
+  accounts:
+    url: https://ingress.ycs.team4.yolt.io/accounts
+  maintenance:
+    url: https://ingress.ycs.team4.yolt.io
+  tokens:
+    url: https://ingress.ycs.team4.yolt.io/tokens
+
+lovebird:
+  providers:
+    endpointBaseUrl: https://ingress.ycs.team4.yolt.io/providers

@@ -1,0 +1,1 @@
+DROP MATERIALIZED VIEW IF EXISTS external_consent_by_expiry_time_v3;

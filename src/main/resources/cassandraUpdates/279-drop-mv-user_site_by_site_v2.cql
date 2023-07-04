@@ -1,0 +1,1 @@
+DROP MATERIALIZED VIEW IF EXISTS user_site_by_site_v2;

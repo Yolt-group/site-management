@@ -1,0 +1,2 @@
+INSERT INTO client_application (client_id, client_application_id, base_redirect_url, updated) VALUES (a2034b12-7dcc-11e8-adc0-fa7ae01bbebc, 29e085b0-7dd0-11e8-adc0-fa7ae01bbebc, 'https://www.yolttestclient.com/callback', '2018-06-21 12:00:00');
+INSERT INTO providers__client_application (client_id, client_application_id, base_redirect_url, updated) VALUES (a2034b12-7dcc-11e8-adc0-fa7ae01bbebc, 29e085b0-7dd0-11e8-adc0-fa7ae01bbebc, 'https://www.yolttestclient.com/callback', '2018-06-21 12:00:00');

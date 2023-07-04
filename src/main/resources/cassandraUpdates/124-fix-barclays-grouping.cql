@@ -1,0 +1,4 @@
+INSERT INTO site_v2 (id, name, external_id, provider, login_type, account_type_whitelist, grouping_by) VALUES (41de5024-d22e-4d24-b295-fd90a4fed926, 'Barclays', '4118', 'YODLEE', 'FORM', ['CURRENT_ACCOUNT','SAVINGS_ACCOUNT'], 'Barclays');
+INSERT INTO site_v2 (id, name, external_id, provider, login_type, account_type_whitelist, grouping_by) VALUES (d28b4598-efcf-41c8-8522-08b2744e551a, 'Barclays', NULL, 'BARCLAYS', 'URL', ['CURRENT_ACCOUNT'], 'Barclays');
+INSERT INTO site_v2 (id, name, external_id, provider, login_type, account_type_whitelist, grouping_by) VALUES (564338d7-7a98-4f0e-811c-08514d33faa0, 'Barclays', '4118', 'YODLEE', 'FORM', ['SAVINGS_ACCOUNT'], 'Barclays');
+INSERT INTO site_v2 (id, name, external_id, provider, login_type, account_type_whitelist, grouping_by) VALUES (65e08e1d-0562-4ffa-b504-86845a67f15f, 'Barclaycard', '4081', 'YODLEE', 'FORM', ['CREDIT_CARD'], 'Barclays');

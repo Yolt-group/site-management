@@ -1,0 +1,42 @@
+@startuml
+title Add a bank (connectionType == "SCRAPING_CONNECTION")
+
+
+actor user
+participant site_management
+participant providers
+participant scraper
+participant bank
+
+user -> site_management : GET /sites/123/initiate-user-site OR /v1/users/{userId}/connect \n(baseRedirectUrlId, psuIpAddress)
+site_management -> providers : (optional) GET providers/form/<provider-site123>/fetch-login-form
+providers -> site_management : (optional) raw login form
+
+site_management -> user : loginForm
+
+user -> site_management : POST /user-sites (completed loginForm)
+
+site_management -> providers : POST /providers/form/<provider-site123>/create-new-user
+providers -> scraper : POST user_creation
+scraper -> providers : (externalUserId, accessMeans)
+providers -> site_management : (externalUserId, accessMeans)
+
+site_management -> providers : (async) POST /providers/form/<provider-site123>/create-new-external-user-site
+providers -> scraper : (async) POST (accessMeans, siteId, externalUserId) create-new-user-site
+site_management -> user : activityId
+
+providers -> site_management : PUT /user-sites/{userSiteId}/external (externalUserSiteId)
+scraper -> site_management : (optional async) kafka message from callback (More info needed)
+
+user -> site_management : (optional) GET /user-sites/{userSiteId}/step
+site_management -> user : (optional) mfaForm
+
+user -> site_management : (optional) POST /user-sites (completed mfaForm)
+
+site_management -> providers : (optional) POST /providers/form/<provider-site123>/submit-mfa
+providers -> scraper : (optional) POST (accessMeans, siteId, externalSiteId, mfaForm)
+scraper -> bank : POST mfaForm
+
+scraper -> site_management : (async) kafka message from callback (status changed)
+site_management -> site_management : schedule flywheel event for data fetch
+@enduml

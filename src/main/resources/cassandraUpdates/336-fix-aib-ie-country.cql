@@ -1,0 +1,2 @@
+DELETE FROM popular_country_site_ranking where site_id = 0851b69c-87bc-40b4-845c-f879708ba89f and country_code = 'NL';
+INSERT INTO popular_country_site_ranking (site_id, country_code, popular, ranking) VALUES (0851b69c-87bc-40b4-845c-f879708ba89f, 'IE', false, NULL);

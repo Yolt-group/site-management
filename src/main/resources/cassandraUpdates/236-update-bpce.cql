@@ -1,0 +1,2 @@
+UPDATE site_v2 SET uses_step_types = {'AIS': ['REDIRECT']} WHERE id = 1d223488-a172-11e9-a2a3-2a2ae2dbcce4;
+UPDATE site_v2 SET uses_step_types = {'AIS': ['REDIRECT']} WHERE id = ccd64612-a172-11e9-a2a3-2a2ae2dbcce4;

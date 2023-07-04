@@ -1,0 +1,1 @@
+ALTER TABLE user_session ADD uses_dynamic_steps Boolean;

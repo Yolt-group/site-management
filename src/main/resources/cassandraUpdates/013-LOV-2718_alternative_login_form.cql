@@ -1,0 +1,1 @@
+ALTER TABLE site_login_form ADD alt_login_form_json text;

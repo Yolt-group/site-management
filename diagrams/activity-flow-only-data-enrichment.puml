@@ -1,0 +1,22 @@
+@startuml
+title Activity flow: only data-enrichment
+
+state DeleteUserSiteEvent
+state CounterpartiesFeedbackEvent
+state CategorizationFeedbackEvent
+state TransactionCyclesFeedbackEvent
+state TransactionsEnrichmentFinishedEvent
+
+state "Processing (not a real state, only conceptual)" as Processing {
+    state StartPipeline
+
+    [*] --> StartPipeline
+}
+
+DeleteUserSiteEvent --> Processing
+CounterpartiesFeedbackEvent --> Processing
+CategorizationFeedbackEvent --> Processing
+TransactionCyclesFeedbackEvent --> Processing
+
+Processing --> TransactionsEnrichmentFinishedEvent : when client has enrichment contract
+@enduml

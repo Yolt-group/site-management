@@ -1,0 +1,11 @@
+UPDATE site_v2 SET name = 'Allianz France' WHERE id = 8e910117-b4ed-4f8b-bf5d-754d7613f775;
+UPDATE site_v2 SET name = 'Caisse d’épargne - CEPAC' WHERE id = d45200c8-c29b-4d8d-84b3-fe3deb84244d;
+UPDATE site_v2 SET name = 'Natixis Wealth Management' WHERE id = 9a6712ac-1e54-4614-85cb-1542d88343e0;
+UPDATE site_v2 SET name = 'CIC Banque Transatlantique' WHERE id = 9400e122-9a8d-447f-9648-c5c136014a7d;
+UPDATE site_v2 SET name = 'Milleis banque' WHERE id = 64cf6f65-f2ed-4b85-9170-26dc9a35323f;
+UPDATE site_v2 SET name = 'Binck.fr' WHERE id = c59e6bb9-4899-4419-a3cc-bf0e5cc24868;
+UPDATE site_v2 SET name = 'Banque Delubac et Cie' WHERE id = 27af58ea-cd9a-4333-95e6-1ccbd1f29cf3;
+UPDATE site_v2 SET name = 'Fortuneo Banque' WHERE id = 24401bfc-dc3d-442b-9c38-14e4929c47bf;
+UPDATE site_v2 SET name = 'iBanFirst' WHERE id = 7359d517-6771-49ab-9251-5ff9d6013dd7;
+UPDATE site_v2 SET name = 'MAAF' WHERE id = 14e88e80-a41c-437e-915c-4cf859683424;
+UPDATE site_v2 SET name = 'Nickel' WHERE id = f5f755a7-2cc0-4a7b-b50e-acf33e87559e;

@@ -1,0 +1,49 @@
+@startuml
+[Site-Management] as sitemanagement
+
+[Providers] as providers
+[Accounts] as accounts
+[Maintenance] as maintenance
+[Users] as users
+
+cloud {
+[Scraping Partners] as scraping_partners
+}
+
+queue "ingestionRequestsErrors" as ingestionRequestsErrors_topic
+queue "proprocessingRequests" as preprocessingRequests_topic
+queue "activityEvents" as activityEvents_topic
+queue "healthOrchestration" as healthOrchestration_topic
+queue "userSiteEvents" as userSiteEvents_topic
+queue "providerAccounts" as providerAccounts_topic
+queue "clientAuthenticationMeans" as clientAuthenticationMeans_topic
+queue "clientRedirectUrls" as clientRedirectUrls_topic
+queue "webhooks" as webhooks_topic
+
+database "Site-Management" as sitemanagement_keyspace
+sitemanagement -[#red]-> sitemanagement_keyspace
+
+sitemanagement -[#black]up-> scraping_partners : HTTP
+
+sitemanagement -[#black]-> providers : HTTP
+sitemanagement -[#black]-> accounts : HTTP
+sitemanagement -[#black]-> users : HTTP
+sitemanagement -[#black]-> maintenance : HTTP
+
+sitemanagement -[#blue]-> preprocessingRequests_topic : publishes
+
+sitemanagement -[#blue]-> activityEvents_topic : publishes
+sitemanagement <-[#blue]- activityEvents_topic : subscribes
+
+sitemanagement -[#blue]-> healthOrchestration_topic : publishes
+sitemanagement -[#blue]-> webhooks_topic : publishes
+
+sitemanagement -[#blue]-> clientRedirectUrls_topic : publishes
+sitemanagement -[#blue]-> userSiteEvents_topic : publishes
+
+sitemanagement -[#blue]-> ingestionRequestsErrors_topic : publishes
+
+providerAccounts_topic -[#blue]-> sitemanagement : subscribes
+clientAuthenticationMeans_topic -[#blue]-> sitemanagement : subscribes
+sitemanagement -[#blue]-> externalConsent_topic : publishes
+@enduml

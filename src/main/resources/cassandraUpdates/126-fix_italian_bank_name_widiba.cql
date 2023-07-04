@@ -1,0 +1,1 @@
+INSERT INTO site_v2 (id, name, external_id, provider, login_type, account_type_whitelist, grouping_by) VALUES (ce55750b-cab1-4c12-abd2-5b79a2015127, 'Widiba Banca', 'widiba_it', 'SALTEDGE', 'FORM', ['CURRENT_ACCOUNT','SAVINGS_ACCOUNT','CREDIT_CARD'], NULL);

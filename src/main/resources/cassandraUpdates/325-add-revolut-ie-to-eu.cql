@@ -1,0 +1,1 @@
+INSERT INTO popular_country_site_ranking (site_id, country_code, popular, ranking) VALUES (555fa50d-62aa-484f-be41-399c510ff375, 'IE', true, NULL);

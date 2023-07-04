@@ -1,0 +1,1 @@
+DROP MATERIALIZED VIEW IF EXISTS client_application_by_redirect_url;

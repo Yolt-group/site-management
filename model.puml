@@ -1,0 +1,73 @@
+@startuml
+object User
+
+object Site
+Site : provider
+
+object UserSite {
+    userId
+    siteId
+    provider
+}
+
+object AccessMeans {
+    userId
+    provider
+}
+
+object Provider
+object Account
+note top: to be extracted
+
+package client-user {
+    object Client {
+    }
+    note right #lightblue
+    (client-users service)
+        <size:10>virtual: it is only </size>
+        <size:10>an id in ClientUser</size>
+    endnote
+
+    object ClientUser {
+        clientId
+        userId
+    }
+}
+
+package providers-web {
+    object ClientAuthenticationMeans {
+        clientId
+        redirectUrlId
+        provider
+    }
+}
+
+object RedirectUrl {
+    clientId
+    redirectUrlId
+    url
+}
+
+object Account {
+    userId
+    userSiteId
+    provider
+}
+
+' This diagram can get messy so make sure to use arrow lengths with care
+UserSite .> User : links a
+UserSite ..> Site : links a
+UserSite .> Provider : for a
+Site ..> Provider : has a
+AccessMeans ..> User : belongs to
+AccessMeans ..> Provider : for a
+ClientUser ..> Client : belongs to
+ClientUser ..> User : wraps a
+RedirectUrl ..> Client : belongs to
+ClientAuthenticationMeans ..> Client : refs to
+ClientAuthenticationMeans ..> RedirectUrl : for a
+ClientAuthenticationMeans ..> Provider : for a
+Account ..> User : belongs to
+Account ..> UserSite : for a
+Account ..> Provider : refs to
+@enduml

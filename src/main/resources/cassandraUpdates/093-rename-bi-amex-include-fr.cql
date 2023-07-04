@@ -1,0 +1,1 @@
+INSERT INTO site (country_code, popular, id, account_type_blacklist, external_id, grouping_by, login_type, name, provider, ranking, account_type_whitelist) VALUES ('FR', false, 113f26e1-6191-49f9-baea-725c3a255b24, NULL, '30', NULL, NULL, 'American Express (France)', 'BUDGET_INSIGHT', NULL, ['CURRENT', 'SAVINGS', 'CREDIT']);

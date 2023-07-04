@@ -1,0 +1,2 @@
+UPDATE site_v2 SET services = ['AIS', 'PIS'], uses_step_types = {'AIS': ['REDIRECT'], 'PIS': ['REDIRECT']} WHERE id = 2967f2c0-f0e6-4f1f-aeba-e4357b82ca7a;
+UPDATE site_v2 SET services = ['AIS', 'PIS'], uses_step_types = {'AIS': ['REDIRECT'], 'PIS': ['REDIRECT']} WHERE id = eedd41a8-51f8-4426-9348-314a18dbdec7;

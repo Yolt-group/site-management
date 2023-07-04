@@ -1,0 +1,67 @@
+server:
+  port: 8091
+spring:
+  kafka:
+    properties:
+      security-protocol: SSL
+  data:
+    cassandra:
+      serial-consistency-level: local_serial
+yolt:
+  commons:
+    block-sensitive-headers:
+      enabled: false
+  client-token:
+    requester:
+      signing-keys:
+        # taken from k8s-manifest-core to allow running site-management against team/integration environments
+        site-management: "{\"p\":\"1Nn0uX7BKPXdg3cNIZBgmDNQxNZUJ7bbaQzVjhY39uUuD8IKViDr0N50J7svzoP0CmtzS0vQBAVx8wqZOxh58vt8O2m09Kj-6wrvgZdaliwV3vTb4XjGvdSJck1bJPPoDNk42u4hddPUiVKhfP2fyVrGaJnuxLBdRgWPuutp2mk\",\"kty\":\"RSA\",\"q\":\"qr6qsB5AvfdEmJsbJH0gt7yArYK66TdPq9_-lCOJuuwO72uykB5QoKmr049d5AYKR_ln0PCQI5D29_FzQYMaN3vNHuiPp83jHkK7QtSubCd6TBn5VR_1I6Fi3P_1sLh4wLudJ6bNhRiBMGd_qqYcTF3GaEFYL4n9whnZ87OVtNk\",\"d\":\"hYu_OQ1slmKMeVifeQ7vQSZLdSZEbfEuzYhIlFIH8KCaCw0U2W0lpgIS5RAD_nOWdvmmF_QPdEaVxdpNveI5n1iuMnB50jjQfp2L3gCIb8f2asggb0a590YLjlAIuDdADiG1nnMC-SLElDnrwpq1JPvu83hnTCfEhx6FPCsn3i1eaiQFqjhwx1QoNpiyxt4baYmDX8NzKOvumpzgsHsnfa9JvXxHu8Aw896-r6EYdqqkXF5sDFWRND4OZJrd90YozOQdy30yvzzLPgEgXriY41Wh-A2qiAwg2_IYM35wosD3xa54sCiSZKJrL7r0-enkoxw61J__8wQkIWPS5jobgQ\",\"e\":\"AQAB\",\"use\":\"sig\",\"kid\":\"4b04ceb9-ecdb-4916-8823-b2db20154bc6\",\"qi\":\"j-TAlOWB282MJIf8FUbLCuNDw3BYDF_kKh1BzRyq2EPuWHAx2Sl1ynpDLwPdXac6MheMzSVnORV_FA5Ank1jifaHceH6h_dzBX8vi2fXkkW0kltGcOZ2wVgJ36XYQasmk4NW_BztCLSvkDWhgzAUTGbo7_W_YSYsm7TxZUMaEYw\",\"dp\":\"zWx1BblRjsiLOt_hKm1-7CVKZE499f5Cj4Y1bOYAqSXSaJ7q_ujS7khjbhz4LKWpF41QPnEyl07yBJBMBn6-40TXRzfjzuRy8kEhmb6LTLfLe9xxgY_gr0C6TjheKLHFWPEkMBb28BK64rV-6XSVi-0x4638hJN50aR4bPvas1E\",\"alg\":\"PS512\",\"dq\":\"UYXlw18-dDUqeF6eUAa6Z1_GZJHlolJ5ZMv3Jk3theUNoHzgbfU7c-pvEv0BzEyh_glz6wvhFkox0OJksGPjUZh3sIlDhdBE337nIBqiCRu0Rb-lD2LJzbBRnslLSoxZg1RQzczTlffEPxM7noPfQQsJH2ALte8BzPpA2R3mnck\",\"n\":\"jfdEMftbJWCBzk7IvNCOHVbp7nNUPOpJIMac_82fjrCGQZ8_OCh1NmeRAlREMaDtw8GiYG3r_Il41JtiRfGyY3P36EaLFfo_ZckdVum2GpgW3doxT_LAHkvnAOuOuLfwaLdShuQ-EmC1vcUmraZr-sn53lQ9gj4bc5e1O8F2wgw7Gm5L2XFmbmMTzWVpfPgwwA9sBlpyF2pJ6bZOx2v4h3XZnlyCSe68rNcAAo6YQL126B5scrrZ3noi_vGyhicMKEKtsW4jDED7AW3eX9S4MjiQkWj4EUZPs2iYCxhDC9EjUOkrz2WzoVYU9SDiOv8O6B24ZuuE2KG0Cp32hGj3AQ\"}"
+  kafka:
+    topics:
+      all-users-batch:
+        topic-name: allUsersBatch
+        listener-concurrency: 1
+      users:
+        topic-name: users
+        listener-concurrency: 1
+      user-site-events:
+        topic-name: userSites
+        listener-concurrency: 2
+      clientRedirectUrls:
+        topic-name: clientRedirectUrls
+        listener-concurrency: 1
+      clientAuthenticationMeans:
+        topic-name: clientAuthenticationMeans
+        listener-concurrency: 1
+      providerAccounts:
+        topic-name: providerAccounts
+        listener-concurrency: 8
+      formProviderExternalUserIds:
+        topic-name: formProviderExternalUserIds
+        listener-concurrency: 2
+      activityEvents:
+        listener-concurrency: 8
+        topic-name: activityEvents
+      requests-errors:
+        topic-name: ingestionRequestsErrors
+  yts-group:
+    redirect-url: https://client-redirect.sandbox.yolt.io
+
+service:
+  accounts:
+    url: https://ingress.integration.yolt.io/accounts
+  maintenance:
+    url: https://ingress.integration.yolt.io
+  tokens:
+    # taken from k8s-manifest-core to allow running site-management against team/integration environments
+    signature-jwks: "{\"keys\":[{\"kty\":\"RSA\",\"e\":\"AQAB\",\"use\":\"sig\",\"kid\":\"2808f03d-1050-45f2-8c01-9c2441e050a8\",\"alg\":\"RS512\",\"n\":\"lRaJ738bbiMUpmTFLVXioZd7u9T9qm6LSH5FdW1AUrJJG-E4fo6n_30_ftUKc4ZZqotlJ-SvujHvqfNTbVkVy4m4j-yVgTQNP-OIsgTREVckcOk0v8bTaQALB3uCLA7xdDrr24K35tS5E6kDQQ8m9RvHiQk4owNLT81PevHkoH1lfgUwOZHfXLzJBqj_PXPoSIT1y9SfkCn7M00ea28n2xWbGXV_vj8bhJhKSXB2jnlHXO2QEXH6v8VoENl9CaWyjkJ0uJPPCyjRYO4-P2F92Xw88RC0rGGH-AA_sI9l8zOHu2MKFAL9txi2irUBq9bIayTWv0sjBbtHm_hopywVaw\"}]}"
+    url: https://ingress.integration.yolt.io/tokens
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  server:
+    ssl:
+      enabled: false

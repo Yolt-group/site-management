@@ -1,0 +1,1 @@
+DELETE FROM payment WHERE created_at < '2021-06-23'; -- we should delete all payments before the merge date.

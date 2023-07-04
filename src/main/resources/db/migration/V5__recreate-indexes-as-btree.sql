@@ -1,0 +1,18 @@
+-- Recreate Btree/Bin indexes as hash
+--
+-- EXECUTED VIA OTC
+--
+-- CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_btree_site_id ON user_site (site_id);
+-- CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_btree_user_id ON user_site (user_id);
+-- CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_btree_client_id ON user_site (client_id);
+-- CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_btree_status ON user_site (status);
+-- CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_btree_migration_status ON user_site (migration_status);
+
+-- Drop previous BTREE/Bin indexes
+--
+-- EXECUTED VIA OTC
+--
+-- DROP INDEX IF EXISTS idx_site_id;   -- btree
+-- DROP INDEX IF EXISTS idx_user_id;   -- btree
+-- DROP INDEX IF EXISTS idx_client_id; -- btree
+-- DROP INDEX IF EXISTS idx_ldf_brin;  -- brin

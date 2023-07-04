@@ -1,0 +1,1 @@
+UPDATE site SET name='LCL' where country_code ='FR' and popular=true and id=81e5b69c-bbaf-4a97-b23c-e6daae6fae67;

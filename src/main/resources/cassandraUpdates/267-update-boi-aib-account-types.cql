@@ -1,0 +1,3 @@
+UPDATE site_v2 SET account_type_whitelist = ['CURRENT_ACCOUNT', 'CREDIT_CARD', 'SAVINGS_ACCOUNT'] WHERE id = ac75d67d-5ede-4972-94a8-3b8481fa2145;
+UPDATE site_v2 SET account_type_whitelist = ['CURRENT_ACCOUNT', 'CREDIT_CARD', 'SAVINGS_ACCOUNT'] WHERE id = 5806ae85-7ee6-48a5-98ea-0f464b9b71cb;
+UPDATE site_v2 SET account_type_whitelist = ['CURRENT_ACCOUNT', 'CREDIT_CARD', 'SAVINGS_ACCOUNT'] WHERE id = 9416de84-502b-4522-a622-635a02ed8924;

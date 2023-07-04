@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  nl.ing.lovebird.sitemanagement.configuration.BatchDataSourceTestAutoConfiguration
+org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase=\
+  nl.ing.lovebird.sitemanagement.configuration.BatchDataSourceTestAutoConfiguration

@@ -1,0 +1,9 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: site-management
+spec:
+  template:
+    metadata:
+      annotations:
+        vault.hashicorp.com/agent-inject-secret-rds: $(ENVIRONMENT)/database/site-management/creds/site-management

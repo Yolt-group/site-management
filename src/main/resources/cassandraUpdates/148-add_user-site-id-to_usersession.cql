@@ -1,0 +1,1 @@
+ALTER TABLE user_session ADD user_site_id uuid;

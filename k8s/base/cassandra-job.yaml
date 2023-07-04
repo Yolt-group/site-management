@@ -1,0 +1,42 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: site-management-cassa
+  labels:
+    team: yts-core
+    git.yolt.io/group: backend
+    git.yolt.io/project: site-management
+    git.yolt.io/tag: $(TAG)
+    yolt.io/config-server-tag: $(CONFIG_SERVER_TAG)
+spec:
+  template:
+    metadata:
+      annotations:
+        vault.hashicorp.com/agent-inject: "true"
+        vault.hashicorp.com/agent-pre-populate-only: "true"
+        vault.hashicorp.com/agent-inject-secret-cassandra: $(ENVIRONMENT)/database/cassa/creds/$(CASSANDRA_NAMESPACE_PREFIX)site-management
+        vault.hashicorp.com/auth-path: "auth/$(ENVIRONMENT)/k8s/eks/pods/$(NAMESPACE)"
+        vault.hashicorp.com/role: site-management
+        ca-certificates.yolt.io/inject: "true"
+      labels:
+        team: yts-core
+    spec:
+      containers:
+        - env:
+            - name: keyspace
+              value: $(CASSANDRA_NAMESPACE_PREFIX)site_management
+            - name: cassandraNode
+              valueFrom:
+                configMapKeyRef:
+                  key: spring_data_cassandra_contact_points
+                  name: cassandra
+            - name: cqlDir
+              value: /cassandraUpdates
+            - name: namespace
+              value: $(NAMESPACE)
+          image: $(DOCKER_REGISTRY)/site-management-cassa:$(DOCKER_TAG)
+          name: site-management-cassa
+      restartPolicy: OnFailure
+      serviceAccountName: site-management
+  backoffLimit: 3
+  ttlSecondsAfterFinished: 0

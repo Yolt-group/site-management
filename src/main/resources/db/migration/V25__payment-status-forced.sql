@@ -1,0 +1,2 @@
+ALTER TABLE payment
+    ADD COLUMN IF NOT EXISTS payment_status_forced BOOLEAN NOT NULL DEFAULT FALSE;

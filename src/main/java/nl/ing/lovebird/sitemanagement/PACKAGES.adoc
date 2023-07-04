@@ -1,0 +1,64 @@
+= Packages
+:docsdir: ../../../../../../../docs
+
+This file describes the package structure used in site-management.
+
+- `accessmeans/`
+  Manage (create, update, read) link:{docsdir}/concepts/access-means.md[access means].
+- `activityevents/`
+  Consume link:{docsdir}/concepts/activity-event.md[activity events] over Kafka.
+  Create link:{docsdir}/concepts/activity-event.md[activity events] over http.
+- `batch/`
+  Batch operations called by the batch-trigger service
+  footnote:[for the background process that refreshes usersites, see `flywheel/`]
+- `clientconfiguration/`
+  Client redirect url and provider configuration, used internally by the management portals.
+- `configuration/`
+  Application configuration classes (Spring stuff).
+- `exception/`
+  Exception classes and conversion to http error messages.
+  **Up for discussion**: we might want to move the individual exceptions to the appropriate packages instead of grouping them.
+- `externalconsent/`
+  An "external consent" is an identifier that a bank assigns to a consent (hence 'external').
+- `flywheel/`
+  A background link:{docsdir}/processes/internal-flywheel.md[process that refreshes each user] X times per day (defaults to 4).
+- `forms/`
+  FormStep related classes.
+- `health/`
+  Code related to the orchestration of activities.
+- `legacy/*`: legacy functionality that needs to be deleted at some point but is still in use
+- `lib/`: generic and shared functionality (validators, annotations, utilities)
+- `maintenanceclient/`
+  A http client to call the maintenance service.
+- `nonlicensedclients/`
+  Functionality to facilitate clients that do not own a PSD2 license.
+- `orphanuser/`
+  A job that can be configured/started from the management portal to clean up "orphaned" users that exist at a scraping provider.
+  An orphaned user is a user that exists at a scraping provider of which we no longer have a record on our end.
+- `provider/`
+  The list of available link:{docsdir}/concepts/provider.md[providers] and their capabilities.
+- `providercallback/`
+  Functionality to handle callbacks coming in for the providers service via the callbacks service (we proxy these).
+- `providerclient/`
+  A http client to call the provider service.
+- `providerrequest/`
+  We keep a record of every request made to providers so we can correlate incoming messages over Kafka across multiple instances of the site-management service.
+- `providerresponse/`
+  Consumes kafka messages coming in from providers on the providerRequest topic and handles them.
+- `site/`
+  A link:{docsdir}/concepts/site.md[site] is a financial institution.
+- `sites/`
+  The list of all available link:{docsdir}/concepts/sites.md[site].
+  **Up for discussion**: probably merge this with `site/`?
+- `users/`
+  We keep a copy of all users.
+- `usersclient/`
+  A http client to call the users service.
+- `usersite/`
+  The main entity that this service manages.  A link:{docsdir}/concepts/user-site.md[usersite].
+- `usersitedelete/`
+  Functionality to delete user sites.
+- `usersiteevent/`
+  We send out events over Kafka whenever certain things happen to a UserSite (status updates).
+- `consentsession/`
+  Whenever a user wants to create/update a usersite a session is created for that purpose.

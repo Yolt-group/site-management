@@ -1,0 +1,197 @@
+{
+  "formComponents": [
+    {
+      "id": "user1",
+      "displayName": "user",
+      "optional": false,
+      "length": 66,
+      "maxLength": 6,
+      "fieldType": "TEXT",
+      "componentType": "FIELD"
+    },
+    {
+      "id": "password1",
+      "displayName": "password",
+      "optional": false,
+      "length": 77,
+      "maxLength": 7,
+      "fieldType": "PASSWORD",
+      "componentType": "FIELD"
+    },
+    {
+      "childComponents": [
+        {
+          "id": "choice-user1",
+          "displayName": "choice-user",
+          "optional": false,
+          "length": 44,
+          "maxLength": 4,
+          "fieldType": "TEXT",
+          "componentType": "FIELD"
+        },
+        {
+          "id": "choice-password1",
+          "displayName": "choice-password",
+          "optional": false,
+          "length": 55,
+          "maxLength": 5,
+          "fieldType": "PASSWORD",
+          "componentType": "FIELD"
+        },
+        {
+          "displayName": "multi",
+          "childComponents": [
+            {
+              "id": "multi-user1",
+              "displayName": "multi-user",
+              "optional": false,
+              "length": 11,
+              "maxLength": 1,
+              "fieldType": "TEXT",
+              "componentType": "FIELD"
+            },
+            {
+              "id": "multi-password1",
+              "displayName": "multi-password",
+              "optional": false,
+              "length": 22,
+              "maxLength": 2,
+              "fieldType": "PASSWORD",
+              "componentType": "FIELD"
+            },
+            {
+              "id": "multi-select1",
+              "displayName": "multi-select",
+              "optional": false,
+              "selectOptionValues": [
+                {
+                  "displayName": "option 1",
+                  "value": "option1"
+                },
+                {
+                  "displayName": "option 2",
+                  "value": "option2"
+                },
+                {
+                  "displayName": "option 3",
+                  "value": "option3"
+                }
+              ],
+              "length": 33,
+              "maxLength": 3,
+              "fieldType": "SELECT",
+              "componentType": "FIELD"
+            }
+          ],
+          "componentType": "CONTAINER",
+          "containerType": "MULTI"
+        }
+      ],
+      "componentType": "CONTAINER",
+      "containerType": "CHOICE"
+    },
+    {
+      "id": "select1",
+      "displayName": "select",
+      "optional": false,
+      "selectOptionValues": [
+        {
+          "displayName": "option 1",
+          "value": "option1"
+        },
+        {
+          "displayName": "option 2",
+          "value": "option2"
+        }
+      ],
+      "length": 88,
+      "maxLength": 8,
+      "fieldType": "SELECT",
+      "componentType": "FIELD"
+    },
+    {
+      "displayName": "main-multi",
+      "childComponents": [
+        {
+          "id": "main-multi-user1",
+          "displayName": "main-multi-user",
+          "optional": false,
+          "length": 99,
+          "maxLength": 9,
+          "fieldType": "TEXT",
+          "componentType": "FIELD"
+        },
+        {
+          "id": "main-multi-user2",
+          "displayName": "main-multi-user2",
+          "optional": false,
+          "length": 1010,
+          "maxLength": 10,
+          "fieldType": "TEXT",
+          "componentType": "FIELD"
+        }
+      ],
+      "componentType": "CONTAINER",
+      "containerType": "MULTI"
+    },
+    {
+      "id": "section1",
+      "displayName": "diplayName",
+      "optional": false,
+      "childComponents": [
+        {
+          "id": "radioId",
+          "displayName": "option 1 or 2",
+          "optional": false,
+          "selectOptionValues": [
+            {
+              "displayName": "option 1",
+              "value": "option1"
+            },
+            {
+              "displayName": "option 2",
+              "value": "option2"
+            }
+          ],
+          "fieldType": "RADIO",
+          "componentType": "FIELD"
+        },
+        {
+          "id": "age",
+          "displayName": "age",
+          "optional": true,
+          "minDate": "1990-01-01",
+          "maxDate": "2018-12-18",
+          "defaultValue": "1990-03-23",
+          "fieldType": "DATE",
+          "componentType": "FIELD"
+        },
+        {
+          "id": "free.text",
+          "displayName": "freeText",
+          "optional": true,
+          "maxLength": 80,
+          "rows": 2,
+          "fieldType": "TEXT_AREA",
+          "componentType": "FIELD"
+        },
+        {
+          "id": "someNumber",
+          "displayName": "some Number",
+          "optional": true,
+          "min": 0,
+          "max": 100,
+          "stepSize": 0.1,
+          "fieldType": "NUMBER",
+          "componentType": "FIELD"
+        },
+        {
+          "fieldType": "IBAN",
+          "componentType": "FIELD"
+        }
+      ],
+      "componentType": "CONTAINER",
+      "containerType": "SECTION"
+    }
+  ]
+}

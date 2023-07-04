@@ -1,0 +1,1 @@
+UPDATE site_v2 SET consent_expiry_in_days = 90 WHERE id = ee4f87b5-68a6-4464-b769-d41737109458;
